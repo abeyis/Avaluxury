@@ -30,7 +30,7 @@ Then('the URL should be "https://avaluxu.myshopify.com/collections/single-bathro
 
 
 And ('the page should load without any errors or delays', () => {
-  
+  //add some text
 });
 
 
