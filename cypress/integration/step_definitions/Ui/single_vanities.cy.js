@@ -11,15 +11,17 @@
 //       Then the Single Vanities page should display only single bathroom vanities
 
 import { Given, When } from "cypress-cucumber-preprocessor/steps";
+import { homePage } from "../../../pages/homePage";
 
 
-
+let HomePage=null
+before(()=>{
+  HomePage =new homePage();
+})
 
 
 When('the user clicks the Single Vanities Button', () => {
-
-    cy.get('.header__active-menu-item').contains('Single Vanities').click 
-
+    HomePage.clickSingleVanities()
   });
 
 Then('the URL should be "https://avaluxu.myshopify.com/collections/single-bathroom-vanities"', () => {

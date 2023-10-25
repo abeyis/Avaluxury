@@ -23,4 +23,9 @@ export class homePage{
     cy.get(this.homePageSelectors.designServices).click();
    }
     
+   clickSingleVanities(){
+    cy.get(this.homePageSelectors.singleVanities).click()
+   }
+
+
 }
