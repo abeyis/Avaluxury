@@ -19,18 +19,17 @@ before(()=>{
   HomePage =new homePage();
 })
 
-
 When('the user clicks the Single Vanities Button', () => {
     HomePage.clickSingleVanities()
   });
+  
 
 Then('the URL should be "https://avaluxu.myshopify.com/collections/single-bathroom-vanities"', () => {
- 
+
   });
 
 
 And ('the page should load without any errors or delays', () => {
-
   
 });
 
