@@ -22,5 +22,9 @@ export class homePage{
    clickDesignServices(){
     cy.get(this.homePageSelectors.designServices).click();
    }
-    
+   clickFreestanding(){
+    cy.get(this.homePageSelectors.style).click();
+    cy.get(this.homePageSelectors.freeStandingVanities).click();
+   }
+        
 }
