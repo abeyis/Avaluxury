@@ -3,12 +3,14 @@ export class SingeVanitiesPage{
     
     singleVanitiesSelectors={
             colorButton: "span:contains('Color')" ,
+                greenButton:
+                blackColor:
             sizeButton: "span:contains('Size')",
             collectionButton: "span:contains('Collection')",
             priceButton: "span:contains('Price')",
+
+
     }
-
-
 
 
 
@@ -28,7 +30,7 @@ export class SingeVanitiesPage{
     clickPriceButton(){
         cy.get(this.singleVanitiesSelectors.priceButton).click()
     }
-    
+
 
 
 }
