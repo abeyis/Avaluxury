@@ -41,7 +41,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
           failOnStatusCode: false,
         }).then((response) => {
           if (response.status === 404) {
-            // 404 hatası alan bağlantıları konsola yazdırın
             cy.log(`Broken Link: ${url}`);
           }
         });
