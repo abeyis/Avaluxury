@@ -28,4 +28,9 @@ export class homePage{
    }
 
 
+
+clickDoubleVanities(){
+    cy.get(this.homePageSelectors.doubleVanities).click();
+   }
+    
 }
