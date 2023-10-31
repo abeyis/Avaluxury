@@ -14,9 +14,8 @@ import { SingeVanitiesPage } from "../../../pages/single_vanities_page";
 //         Then User verifies the page title is "Single Bathroom Vanities"
 
 
-Given('User navigates to Home Page', () => {
-  cy.visit(Cypress.env('avaluxury_endpoint'));
-   }); 
+
+   
 
 let HomePage=null
 before(()=>{
@@ -27,9 +26,10 @@ When('User clicks to Single Vanities', () => {
     HomePage.clickSingleVanities();
 });
    
-Then('User verifies the page title is "Single Bathroom Vanities"', (pageTitle) => {
-    cy.title().should('contain', pageTitle);
-}); 
+Then('User verifies the page title is {string}', ("Single Bathroom Vanities") => {
+    cy.title().should('contain', "Single Bathroom Vanities")
+});     
+
 
 
 
