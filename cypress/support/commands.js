@@ -40,11 +40,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
           url,
           failOnStatusCode: false,
         }).then((response) => {
-          if (response.status === 404) {
-            cy.log(`Broken Link: ${url}`);
+          if (response.status === 404){
+             expect(response.status).to.eq(404, `Broken Link: ${url}`); 
+            } else { 
+            expect(response.status).to.be.lessThan(400, `Invalid response status code for link: ${url}`); 
           }
-        });
-      }
+           });
+     }
     });
   });
-  
