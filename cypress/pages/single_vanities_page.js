@@ -2,13 +2,12 @@
 export class SingeVanitiesPage{
     
     singleVanitiesSelectors={
-            colorButton: "span:contains('Color')" ,
-                greenButton:
-                blackColor:
+            colorButton:"span:contains('Color')" ,
+                greenColour:"span.gf-option-one-color[style='background-color:rgba(147, 168, 52, 1)']" ,
+                blackColour: "span.gf-option-one-color[style='background-color:rgba(0, 0, 0, 1)']",
             sizeButton: "span:contains('Size')",
             collectionButton: "span:contains('Collection')",
             priceButton: "span:contains('Price')",
-
 
     }
 
