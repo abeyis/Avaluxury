@@ -4,6 +4,7 @@ export class floatingBathroomVanities {
     cartIcon: "#cart-icon-bubble",
     deleteIcon: ".button--tertiary",
     cartEpmtyText: ".cart__empty-text"
+
     
   };
 
@@ -23,7 +24,12 @@ export class floatingBathroomVanities {
     cy.get('.cart__empty-text').invoke('text').then((text) => {
      
       assert.equal(text, 'Your cart is empty');
-  });
-    
+  });   
   };
+
+  getCartCount() {
+    return cy.get('div.cart-count-bubble span[aria-hidden="true"]').invoke('text').then((text) => {
+      return parseInt(text);
+    });
+  }
 }

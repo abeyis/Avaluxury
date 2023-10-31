@@ -20,10 +20,11 @@ When("User clicks to the Add to Cart button", () => {
 });
 
 Then(
-  "User should be able to verify that the product is added to my shopping cart", function () {
-
-  }
-);
+  "User should be able to verify that the product is added to the shopping cart", function () {
+    FloatingBathroomVanities.getCartCount().then((count) => {
+      expect(count).to.eq(1);
+  })
+});
 
 And("User clicks the delete icon", function () {
   FloatingBathroomVanities.deleteProductFromShoppingCart();
