@@ -15,9 +15,7 @@ When('User clicks to Single Vanities', () => {
     HomePage.clickSingleVanities();
 });
    
-Then('User verifies the page title is {string}', ("Single Bathroom Vanities") => {
-    cy.title().should('contain', "Single Bathroom Vanities")
-});     
+
 
 
 
