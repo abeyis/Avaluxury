@@ -30,7 +30,13 @@ export class SingeVanitiesPage{
         cy.get(this.singleVanitiesSelectors.priceButton).click()
     }
 
+    clickGreenColour(){
+        cy.get(this.singleVanitiesSelectors.greenColour).click()
+    }
 
+    clickBlackColour(){
+        cy.get(this.singleVanitiesSelectors.blackColour).click()
+    }
 
 }
 
