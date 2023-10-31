@@ -1,45 +1,29 @@
-
 export class floatingBathroomVanities {
-    
   floatingVanitiesSelectors = {
-    addToCart:"div[class='spf-product-card spf-product-card__left spf-product-card__template-2']",
+    addToCart: ".spf-product__form-btn-addtocart",
     cartIcon: "#cart-icon-bubble",
+    deleteIcon: ".button--tertiary",
+    cartEpmtyText: ".cart__empty-text"
     
-
   };
 
   clickAddToCartButton() {
-      cy.get(this.floatingVanitiesSelectors.addToCart).click();
-  };
+    cy.get(this.floatingVanitiesSelectors.addToCart).first().click();
+  }
 
   clickCartIcon() {
     cy.get(this.floatingVanitiesSelectors.cartIcon).click();
-  };
+  }
 
-  deleteProductFromShoppingCart(){
-    const element = document.getElementsByClassName('cart__empty-text');
-    if (element) {
-        return 'Your cart is empty'
-    } else {
-        const deleteIcon = document.querySelectorAll('a[aria-label]')[1];
-        deleteIcon.click();
-    }
+  deleteProductFromShoppingCart() {
+    cy.get(this.floatingVanitiesSelectors.deleteIcon).click();
+  }
 
-};
-
-productQuantityAtShoppingCart(){
-    const element = document.getElementsByClassName('cart-count-bubble');
-    if (element) {
-        const elementText = element.textContent;
-    return elementText;
-    } else {
-        
-    return 0;
-    }
+  verifyCartIsEmpty() {
+    cy.get('.cart__empty-text').invoke('text').then((text) => {
+     
+      assert.equal(text, 'Your cart is empty');
+  });
     
-        
-}
-
-
-
+  };
 }

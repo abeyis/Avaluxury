@@ -6,11 +6,11 @@ Feature: Floating Bathroom Page
     Then User verifies the page title is 'Floating Bathroom Vanities'
 
     Scenario: Add product/products to shopping cart
-    When User clicks to the Add to Cart button
-#     Then User should be able to verify that the product is added to my shopping cart and the cart's item count is updated accurately
+      When User clicks to the Add to Cart button
+#     Then User should be able to verify that the product is added to the shopping cart
 
    Scenario: Remove product/products from shopping cart
-     Given User on the shopping cart
-     When User click the delete button
-     Then the item should be deleted from my shopping cart
+     When User clicks to the Add to Cart button
+     And User clicks the delete icon
+     Then The item should be deleted from the shopping cart
 
