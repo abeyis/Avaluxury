@@ -15,12 +15,26 @@ export class homePage{
      designServices:"a[id='HeaderMenu-design-services'] span",
      blog:"a[id='HeaderMenu-blog'] span",
      contact:"a[id='HeaderMenu-contact'] span",
-     about:"a[id='HeaderMenu-about'] span"
+     about:"a[id='HeaderMenu-about'] span",
     }
 
 
    clickDesignServices(){
     cy.get(this.homePageSelectors.designServices).click();
    }
-    
+
+
+   clickContact(){
+    cy.get(this.homePageSelectors.contact).click();
+   }
+
+   clickToSizes(){
+    cy.get(this.homePageSelectors.sizes).click();
+   }
+   
+
+   chooseSize(size) {
+    cy.get('#HeaderMenu-sizes-' + size + '-inch').click();
+    cy.wait(1000);
+  }
 }

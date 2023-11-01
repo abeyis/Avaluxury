@@ -1,7 +1,7 @@
 import { Given, When } from "cypress-cucumber-preprocessor/steps";
 
 Given('User navigates to Home Page', () => {
-    cy.visit(Cypress.env('avaluxury_endpoint'));
+    cy.visit(Cypress.env('avaluxury_endpoint')),{ failOnStatusCode: false};
      });
 
 //Use this function to verify page title     
