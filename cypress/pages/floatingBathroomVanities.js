@@ -31,5 +31,16 @@ export class floatingBathroomVanities {
     return cy.get('div.cart-count-bubble span[aria-hidden="true"]').invoke('text').then((text) => {
       return parseInt(text);
     });
-  }
+  };
+
+  clickAddToCartButtonWithIndex(index) {
+    cy.get(this.floatingVanitiesSelectors.addToCart).eq(index).click();
+  };
+
+
+
+
+
+
+
 }

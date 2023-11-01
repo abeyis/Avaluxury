@@ -1,10 +1,10 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import { When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import { homePage } from "../../../pages/homePage";
 import { floatingBathroomVanities } from "../../../pages/floatingBathroomVanities";
 
 let HomePage = null;
 let FloatingBathroomVanities = null;
-let productQuantityBeforeDeleting = null;
+
 
 before(() => {
   HomePage = new homePage();
@@ -16,7 +16,7 @@ And("User navigates to Floating Bathroom Vanities Page", () => {
 });
 
 When("User clicks to the Add to Cart button", () => {
-  FloatingBathroomVanities.clickAddToCartButton();
+  FloatingBathroomVanities.clickAddToCartButtonWithIndex(21);
 });
 
 Then(
