@@ -29,11 +29,12 @@ export class homePage{
    }
 
 
+   clickSingleVanities(){
+    cy.get(this.homePageSelectors.singleVanities).click()
+   }
 
-
-
-clickDoubleVanities(){
+  clickDoubleVanities(){
     cy.get(this.homePageSelectors.doubleVanities).click();
    }
     
-}
+ }
