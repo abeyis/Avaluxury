@@ -23,8 +23,15 @@ export class homePage{
    }
 
 
+
    clickContact(){
     cy.get(this.homePageSelectors.contact).click();
+   }
+    
+   clickFloatingBathroomVainities(){
+    cy.get(this.homePageSelectors.style).click();
+    cy.get(this.homePageSelectors.floatingVanities).click();
+
    }
 
    clickToSizes(){
@@ -44,4 +51,6 @@ export class homePage{
   clickDoubleVanities(){
     cy.get(this.homePageSelectors.doubleVanities).click();
    }
-}
+    
+ }
+
