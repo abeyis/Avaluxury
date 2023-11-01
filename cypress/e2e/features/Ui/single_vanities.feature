@@ -19,11 +19,11 @@ Feature: Single Vanities
             And User clicks the size-18inch
             Then The page should display only the vanities with size-18inch
 
-        # Scenario: Collection filter test
-        #     When User clicks to Single Vanities
-        #     And User clicks Collection Filter Button
-        #     And User clicks the Single Bathroom Vanities
-        #     Then The page should display only the Single vanities
+        Scenario: Collection filter test
+            When User clicks to Single Vanities
+            And User clicks Collection Filter Button
+            And User clicks the Single Bathroom Vanities
+            Then The page should display only the Single vanities
 
         # Scenario: Price filter test
         #     When User clicks to Single Vanities

@@ -8,18 +8,21 @@ export class SingleVanitiesPage{
             sizeButton: "div.h3>span:contains('Size')",
                 size_18inch:"button[role='checkbox'][aria-checked='false'][data-fid='98949'][data-fvalue='18 Inch'][title='18 Inch']",   
             collectionButton: "div.h3>span:contains('Collection')",
+                singleBathroomVanitiesCollection: "span.gf-label:contains('Single Bathroom Vanities') ~ span.gf-Checkbox",
             priceButton: "div.h3>span:contains('Price')",
 
-        // green vanities
+        // green vanities (color filter)
             SelenaBathroomVanity48: 'a[translatable][href="/products/48-inch-green-selena-bathroom-vanity?variant=47450065830161"]',
             SelenaBathroomVanity36: 'a[translatable][href="/products/36-inch-green-selena-bathroom-vanity?variant=47449987023121"]',
             SelenaBathroomVanity30: 'a[translatable][href="/products/30-inch-green-selena-bathroom-vanity?variant=47449908773137"]',
             SelenaBathroomVanity24: 'a[translatable][href="/products/24-inch-green-selena-bathroom-vanity?variant=47449855066385"]',       
 
-        //18 inch vanities
+        //18 inch vanities (size filter)
             SelenaBathroomVanityWhite18: "a[translatable][href='/products/18-inch-white-selena-bathroom-vanity?variant=47425636139281']",
-            SelenaBathroomVanityGray18: "a[translatable][href='/products/18-inch-gray-selena-bathroom-vanity?variant=47449802932497']"
-        
+            SelenaBathroomVanityGray18: "a[translatable][href='/products/18-inch-gray-selena-bathroom-vanity?variant=47449802932497']",
+
+        //single vanities (collection filter)
+            ProductsOnThePage: "a[translatable][href^='/products/]"
         }
 
 
@@ -38,6 +41,7 @@ export class SingleVanitiesPage{
     clickPriceButton(){
         cy.get(this.singleVanitiesSelectors.priceButton).click()
     }
+
 
     clickGreenColour(){
         cy.get(this.singleVanitiesSelectors.greenColour).click()
@@ -75,9 +79,11 @@ export class SingleVanitiesPage{
         return cy. get (this.singleVanitiesSelectors.SelenaBathroomVanityGray18)
     }
 
+    
+    clickSingleBathroomVanitiesCollection() {
+        cy.get (this.singleVanitiesSelectors.singleBathroomVanitiesCollection).click()
+    }
+
+
 }
-
-
-
-
 

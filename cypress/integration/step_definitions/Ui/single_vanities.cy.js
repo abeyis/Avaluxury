@@ -53,7 +53,45 @@ before(()=>{
     singleVanitiesPage.getHeaderOfProduct6().should('contain.text', '18 Inch');
   })
 
+  
+  // Scenario : Collection filter test
+
+  // Scenario: Collection filter test
+  //           When User clicks to Single Vanities
+  //           And User clicks Collection Filter Button
+  //           And User clicks the Single Bathroom Vanities
+  //           Then The page should display only the Single vanities
+
+  
+  And ('User clicks Collection Filter Button' , () => {
+    singleVanitiesPage.clickCollectionButton()
+  })
+
+  And ('User clicks the Single Bathroom Vanities' , () => {
+    singleVanitiesPage.clickSingleBathroomVanitiesCollection()
+  })
+  
+  
+  Then ('The page should display only the Single vanities', () => {
  
+    
+
+    checkEveryProductOnThePage_oneByOne() {
+    // Get a list of all products in the filtered page
+      cy.get('a[translatable][href^="/products/"]').each(($productLink) => {
+  
+      // Click on each product link  
+      cy.wrap($productLink).click();
+  
+      // check every product's header in the description of the product
+      cy.get('div.post-content p[data-mce-fragment="1"]').should('contain.text', 'Single')
+  
+      // Go back to the previous page to click the next product
+      cy.go('back');
+    });
+  };
+
+})
 
 
 
