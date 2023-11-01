@@ -14,7 +14,6 @@ When('User clicks to Single Vanities', () => {
 });
    
 
-
 // Scenario: Color filter test 
 
 let singleVanitiesPage=null
@@ -38,6 +37,21 @@ before(()=>{
     singleVanitiesPage.getHeaderOfProduct4().should('contain.text', 'Green');
   })
 
+
+  // Scenario: Size filter test
+
+  And ('User clicks the Size Filter Button', () => {
+    singleVanitiesPage.clickSizeButton();
+  })
+
+  And ('User clicks the size-18inch' , () => {
+    singleVanitiesPage.clickSize18inch();
+  })
+
+  Then ('The page should display only the vanities with size-18inch' , () => {
+    singleVanitiesPage.getHeaderOfProduct5().should('contain.text', '18 Inch');
+    singleVanitiesPage.getHeaderOfProduct6().should('contain.text', '18 Inch');
+  })
 
  
 
