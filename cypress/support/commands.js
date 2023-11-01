@@ -49,3 +49,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
      }
     });
   });
+  Cypress.Commands.add("typeAndEnter", (selector, text) => {
+    cy.get(selector).should('be.visible').type(text);
+    cy.get(selector).type('{enter}');
+    
+  });
+  Cypress.Commands.add('checkSearchResults', (expectedResultCount, searchTerm) => {
+    cy.get('span.gf-summary b').should('have.text', expectedResultCount).then((resultCount) => {
+      if (resultCount !== expectedResultCount) {
+        cy.log(`Expected Result: ${expectedResultCount}, Actual result: ${resultCount}`);
+      }
+    });
+  });
+  

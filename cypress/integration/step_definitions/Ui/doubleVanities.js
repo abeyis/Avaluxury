@@ -13,3 +13,12 @@ When('User clicks to Double Bathroom Vanities', () => {
 When('I should see all links are working', () => {
     cy.checkBrokenLinks();
 });
+
+When("I enter {string} into the search box", (searchTerm) => {
+    cy.typeAndEnter('input.gf-controls-search-input', searchTerm);
+    
+});
+
+Then("I should see {string} results for {string}", (expectedResultCount,searchTerm) => {
+  cy.checkSearchResults(expectedResultCount, searchTerm);
+});
