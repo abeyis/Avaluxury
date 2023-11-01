@@ -12,11 +12,12 @@ before(() => {
 });
 
 And("User navigates to Floating Bathroom Vanities Page", () => {
-  HomePage.navigateToFloatingBathroomVanities();
+  HomePage.clickFloatingBathroomVainities();
 });
 
 When("User clicks to the Add to Cart button", () => {
-  FloatingBathroomVanities.clickAddToCartButtonWithIndex(21);
+
+  FloatingBathroomVanities.clickAddToCartButton();
 });
 
 Then(

@@ -23,7 +23,7 @@ export class homePage{
     cy.get(this.homePageSelectors.designServices).click();
    }
     
-   navigateToFloatingBathroomVanities(){
+   clickFloatingBathroomVainities(){
     cy.get(this.homePageSelectors.style).click();
     cy.get(this.homePageSelectors.floatingVanities).click();
    }
