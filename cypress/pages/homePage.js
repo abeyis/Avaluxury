@@ -18,16 +18,31 @@ export class homePage{
      about:"a[id='HeaderMenu-about'] span"
     }
 
-
    clickDesignServices(){
     cy.get(this.homePageSelectors.designServices).click();
+   }
+
+
+
+   clickContact(){
+    cy.get(this.homePageSelectors.contact).click();
    }
     
    clickFloatingBathroomVainities(){
     cy.get(this.homePageSelectors.style).click();
     cy.get(this.homePageSelectors.floatingVanities).click();
+
    }
 
+   clickToSizes(){
+    cy.get(this.homePageSelectors.sizes).click();
+   }
+   
+
+   chooseSize(size) {
+    cy.get('#HeaderMenu-sizes-' + size + '-inch').click();
+    cy.wait(1000);
+  }
 
    clickSingleVanities(){
     cy.get(this.homePageSelectors.singleVanities).click()
@@ -38,3 +53,4 @@ export class homePage{
    }
     
  }
+
