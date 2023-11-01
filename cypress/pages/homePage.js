@@ -23,14 +23,18 @@ export class homePage{
     cy.get(this.homePageSelectors.designServices).click();
    }
     
+   clickFloatingBathroomVainities(){
+    cy.get(this.homePageSelectors.style).click();
+    cy.get(this.homePageSelectors.floatingVanities).click();
+   }
+
+
    clickSingleVanities(){
     cy.get(this.homePageSelectors.singleVanities).click()
    }
 
-
-
-clickDoubleVanities(){
+  clickDoubleVanities(){
     cy.get(this.homePageSelectors.doubleVanities).click();
    }
     
-}
+ }

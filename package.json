@@ -19,4 +19,5 @@
     "nonGlobalStepDefinitions": false,
     "step_definitions": "cypress/integration/step_definitions/Ui"
   }
+
 }
