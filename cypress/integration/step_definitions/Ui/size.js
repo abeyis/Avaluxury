@@ -1,5 +1,5 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
-import { homePage } from "../../../pages/HomePage";
+import { homePage } from "../../../pages/homePage";
 import { sizePage } from "../../../pages/sizePage";
 
 let HomePage=null

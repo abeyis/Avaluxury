@@ -18,7 +18,6 @@ export class homePage{
      about:"a[id='HeaderMenu-about'] span",
     }
 
-
    clickDesignServices(){
     cy.get(this.homePageSelectors.designServices).click();
    }
@@ -37,4 +36,12 @@ export class homePage{
     cy.get('#HeaderMenu-sizes-' + size + '-inch').click();
     cy.wait(1000);
   }
+
+   clickSingleVanities(){
+    cy.get(this.homePageSelectors.singleVanities).click()
+   }
+
+  clickDoubleVanities(){
+    cy.get(this.homePageSelectors.doubleVanities).click();
+   }
 }
