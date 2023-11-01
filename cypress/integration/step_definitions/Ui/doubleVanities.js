@@ -10,6 +10,6 @@ When('User clicks to Double Bathroom Vanities', () => {
     HomePage.clickDoubleVanities();
 });
 
-
-
-
+When('I should see all links are working', () => {
+    cy.checkBrokenLinks();
+});
