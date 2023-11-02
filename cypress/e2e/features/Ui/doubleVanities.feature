@@ -15,7 +15,6 @@ Given User navigates to Home Page
     Given User clicks to Double Bathroom Vanities
     When I enter "<searchTerm>" into the search box
     Then I should see search results for "<searchTerm>"
-
     Examples:
       | searchTerm    |
       | White Selena  |

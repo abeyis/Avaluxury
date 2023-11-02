@@ -27,7 +27,6 @@ Then("I should see {string} results for {string}", (expectedResultCount,searchTe
 When("I enter {string} into the search box", (searchTerm) => {
     cy.typeAndEnter('input.gf-controls-search-input', searchTerm);
     
-
 });
 
 Then('I should see search results for {string}', (searchTerm) => {
