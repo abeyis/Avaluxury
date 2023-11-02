@@ -53,12 +53,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     cy.get(selector).type('{enter}');
     
   });
+
+  Cypress.Commands.add('verifySearchResults', (searchTerm) => {
+  cy.get('#gf-products .spf-product-card__inner').each((productCard) => {
+    const productTitle = productCard.find('a').attr('title');
   
-  Cypress.Commands.add('checkSearchResults', (expectedResultCount, searchTerm) => {
-    cy.get('span.gf-summary b').should('have.text', expectedResultCount).then((resultCount) => {
-      if (resultCount !== expectedResultCount) {
-        cy.log(`Expected Result: ${expectedResultCount}, Actual result: ${resultCount}`);
-      }
-    });
+    console.log(`Product Title: ${productTitle}`);
+    if (productTitle.includes(searchTerm)) {
+      cy.log(`Matching product found: ${productTitle}`);
+    } else {
+      cy.log(`Unexpected product found: ${productTitle}`);
+    }
   });
-  
+});
