@@ -22,3 +22,14 @@ When("I enter {string} into the search box", (searchTerm) => {
 Then("I should see {string} results for {string}", (expectedResultCount,searchTerm) => {
   cy.checkSearchResults(expectedResultCount, searchTerm);
 });
+  
+
+When("I enter {string} into the search box", (searchTerm) => {
+    cy.typeAndEnter('input.gf-controls-search-input', searchTerm);
+    
+
+});
+
+Then('I should see search results for {string}', (searchTerm) => {
+    cy.verifySearchResults(searchTerm);
+  });
