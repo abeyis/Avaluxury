@@ -2,6 +2,7 @@ export class freestandingPage{
 
 
     freestandingPageSelectors = {
+        
         colorTitle:"div[class='gf-block-title']",
   //      color: "div[data-filter-id='98948']",
         colorSearch:".gf-search",
@@ -13,6 +14,10 @@ export class freestandingPage{
         colorWhite:"button[title='White']",
 
         productColor:"div.h4.spf-product-card__title>a",
+     //  t:'#HeaderMenu-sizes-' + chosenSize + '-inch',
+        
+
+
         sizeTitle:"div[class='gf-block-title']",
     //    size: "div[data-filter-id='98949']",
         size18: "button[title='18 Inch']",
@@ -41,6 +46,8 @@ export class freestandingPage{
     
     pickColor(color){
         cy.get(this.freestandingPageSelectors.color).click()
+
+
         
 
             switch (color) {
@@ -68,6 +75,11 @@ export class freestandingPage{
 
     }
    
+    chooseColor(color) {
+        cy.get('button[data-fvalue='+`${color}` + '] span').click();
+      }
+
+
     verifyProductColor(color){
         cy.get(this.freestandingPageSelectors.productColor).each((item)=>{
             cy.log(item)

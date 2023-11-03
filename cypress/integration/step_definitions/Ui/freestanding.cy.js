@@ -1,7 +1,7 @@
 import { Then, When, And } from "cypress-cucumber-preprocessor/steps";
 import { freestandingPage } from "../../../pages/freestandingPage";
 import { homePage } from "../../../pages/homePage";
-import { size } from "cypress/types/lodash";
+
 
 let HomePage = null
 let FreestandingPage = null
@@ -13,8 +13,11 @@ When('user goes to freestanding vanities page', () => {
     HomePage.clickFreestanding()
 });
 
+
 And('user picks {string} as color', (color) => {
-FreestandingPage.pickColor(color)
+  cy.contains('span', 'Color').click()
+ // cy.get('button[data-fvalue="Green"] span').click()
+FreestandingPage.chooseColor(color)
 });
 
 Then('user should see only {string} products', (color) => {

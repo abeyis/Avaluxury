@@ -1,4 +1,4 @@
-Feature: Design Services
+Feature: Freestanding
 
 Background: User is on the home page
 Given User navigates to Home Page
