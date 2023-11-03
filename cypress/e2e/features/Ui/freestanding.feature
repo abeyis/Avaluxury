@@ -5,8 +5,8 @@ Given User navigates to Home Page
 
 Scenario: color check
 When user goes to freestanding vanities page
-And user picks "White" as color 
-Then user should see only "White" products
+And user picks "Navy Blue" as color 
+Then user should see only "Navy Blue" products
 """
 Scenario: user size control
 When the user clicks on the size

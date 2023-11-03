@@ -1,6 +1,7 @@
 import { Then, When, And } from "cypress-cucumber-preprocessor/steps";
 import { freestandingPage } from "../../../pages/freestandingPage";
 import { homePage } from "../../../pages/homePage";
+import { size } from "cypress/types/lodash";
 
 let HomePage = null
 let FreestandingPage = null
@@ -8,40 +9,33 @@ before(()=>{
     FreestandingPage = new freestandingPage();
     HomePage =new homePage();
   })
-When('user goes to freestanding vanities page', () => {
-    
+When('user goes to freestanding vanities page', () => { 
     HomePage.clickFreestanding()
-
 });
 
 And('user picks {string} as color', (color) => {
-
 FreestandingPage.pickColor(color)
-
 });
 
 Then('user should see only {string} products', (color) => {
 FreestandingPage.verifyProductColor(color);
 });
 
-Then('the user should be redirected to the detail page of the product', () => {
-
-});
-
 Given('User navigates to Home Page', () => {
   FreestandingPage.pickColor()
 });
-
+/*
 When('the user clicks on the size', () => {
+  HomePage.clickFreestanding()
 });
-
-Then('the user must see {string} all dimensions', (size) => {
+And('the user must see {string} all dimensions', (size) => {
+FreestandingPage.pickSize(size)
 });
 
 Then('the user should be {string} able to select the size', (size) => {
- 
+  FreestandingPage.verifyProductSize(size);
 });
-
+*/
 
 When('the user clicks on the search box', () => {
 });
@@ -83,4 +77,7 @@ And('all the sort variants of the user must be seen', (number) => {
 
 Then('the user should be able to select the desired sort list', (number) => {
   
+});
+
+Then('the user should be redirected to the detail page of the product', () => {
 });

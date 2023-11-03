@@ -2,8 +2,8 @@ export class freestandingPage{
 
 
     freestandingPageSelectors = {
-
-        color: "div[data-filter-id='98948']",
+        colorTitle:"div[class='gf-block-title']",
+  //      color: "div[data-filter-id='98948']",
         colorSearch:".gf-search",
         colorBeechwood:"button[title='Beechwood']",
         colorDarkOak:"button[title='Dark Oak']",
@@ -13,8 +13,8 @@ export class freestandingPage{
         colorWhite:"button[title='White']",
 
         productColor:"div.h4.spf-product-card__title>a",
-
-        size: "div[data-filter-id='98949']",
+        sizeTitle:"div[class='gf-block-title']",
+    //    size: "div[data-filter-id='98949']",
         size18: "button[title='18 Inch']",
         size24: "button[title='24 Inch']",
         size30: "button[title='30 Inch']",
@@ -67,11 +67,12 @@ export class freestandingPage{
             }
 
     }
-
-
+   
     verifyProductColor(color){
         cy.get(this.freestandingPageSelectors.productColor).each((item)=>{
+            cy.log(item)
             expect(item).to.contain(color);
+            cy.wait(3000)
         })
     }
 
@@ -107,6 +108,16 @@ export class freestandingPage{
                     throw new Error("There is no such size");
             }
         }
+
+        verifyProductSize(size){
+            cy.get(this.freestandingPageSelectors.productSize).each((item)=>{
+                cy.log(item)
+                expect(item).to.contain(size);
+            })
+        }
+    
+
+        
         definePriceRange(minPrice, maxPrice) {
        
             cy.get(this.freestandingPageSelectors.minPriceInput).type(minPrice)
