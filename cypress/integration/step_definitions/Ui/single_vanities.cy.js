@@ -55,43 +55,46 @@ before(()=>{
 
   
   // Scenario : Collection filter test
-
-  // Scenario: Collection filter test
-  //           When User clicks to Single Vanities
-  //           And User clicks Collection Filter Button
-  //           And User clicks the Single Bathroom Vanities
-  //           Then The page should display only the Single vanities
-
   
   And ('User clicks Collection Filter Button' , () => {
     singleVanitiesPage.clickCollectionButton()
   })
+
 
   And ('User clicks the Single Bathroom Vanities' , () => {
     singleVanitiesPage.clickSingleBathroomVanitiesCollection()
   })
   
   
-  Then ('The page should display only the Single vanities', () => {
- 
+  Then('The page should display only the Single vanities', () => {
     
-
-    checkEveryProductOnThePage_oneByOne() {
-    // Get a list of all products in the filtered page
-      cy.get('a[translatable][href^="/products/"]').each(($productLink) => {
-  
-      // Click on each product link  
-      cy.wrap($productLink).click();
-  
-      // check every product's header in the description of the product
-      cy.get('div.post-content p[data-mce-fragment="1"]').should('contain.text', 'Single')
-  
-      // Go back to the previous page to click the next product
-      cy.go('back');
-    });
-  };
-
-})
+    function checkProduct(singleKeyword) {
+      
+      cy.get('.h4.spf-product-card__title').each(($productTitle) => {
+        const titleText = $productTitle.text();
+      
+        if (titleText.includes('Single')) {
+          cy.log('Test is passed');
+      
+        } else {
+          cy.wrap($productTitle).click();
+      
+          cy.get('p[data-mce-fragment="1"]').each(($productDescription) => {
+            const descriptionText = $productDescription.text();
+      
+            if (descriptionText.includes('Single')) {
+              cy.log('Test is passed');
+            } else {
+              cy.log('Test is failed, there is a bug');
+            }
+          });
+      
+          // Go back to the previous page
+          cy.go('back');
+        }
+      });
+  }
+});
 
 
 

@@ -5,10 +5,13 @@ export class SingleVanitiesPage{
             colorButton:"div.h3>span:contains('Color')" ,
                 greenColour:"span.gf-option-one-color[style='background-color:rgba(147, 168, 52, 1)']" ,
                 blackColour: "span.gf-option-one-color[style='background-color:rgba(0, 0, 0, 1)']",
+           
             sizeButton: "div.h3>span:contains('Size')",
                 size_18inch:"button[role='checkbox'][aria-checked='false'][data-fid='98949'][data-fvalue='18 Inch'][title='18 Inch']",   
+            
             collectionButton: "div.h3>span:contains('Collection')",
-                singleBathroomVanitiesCollection: "span.gf-label:contains('Single Bathroom Vanities') ~ span.gf-Checkbox",
+                singleBathroomVanitiesCollection: 'button[role="checkbox"][aria-checked="true"][data-fid="98973"][data-fvalue="461776847121"][title="Single Bathroom Vanities"]',
+            
             priceButton: "div.h3>span:contains('Price')",
 
         // green vanities (color filter)
@@ -21,8 +24,7 @@ export class SingleVanitiesPage{
             SelenaBathroomVanityWhite18: "a[translatable][href='/products/18-inch-white-selena-bathroom-vanity?variant=47425636139281']",
             SelenaBathroomVanityGray18: "a[translatable][href='/products/18-inch-gray-selena-bathroom-vanity?variant=47449802932497']",
 
-        //single vanities (collection filter)
-            ProductsOnThePage: "a[translatable][href^='/products/]"
+
         }
 
 
@@ -35,7 +37,7 @@ export class SingleVanitiesPage{
        }
 
     clickCollectionButton(){
-        cy.get(this.singleVanitiesSelectors.collectionButton).click()
+        cy.get(this.singleVanitiesSelectors.collectionButton).click().click()
     }
 
     clickPriceButton(){
@@ -83,6 +85,8 @@ export class SingleVanitiesPage{
     clickSingleBathroomVanitiesCollection() {
         cy.get (this.singleVanitiesSelectors.singleBathroomVanitiesCollection).click()
     }
+
+
 
 
 }
