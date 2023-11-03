@@ -25,9 +25,26 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
     return false
   })
+  Cypress.Commands.add('checkBrokenLinks', () => {
+    cy.get('a').each((link) => {
+      const url = link.prop('href');
+  
+      if (url && url !== '#' && !url.startsWith('javascript:')) {
+        cy.request({
+          url,
+          failOnStatusCode: false,
+        }).then((response) => {
+          if (response.status === 404){
+             expect(response.status).to.eq(404, `Broken Link: ${url}`); 
+            } else { 
+            expect(response.status).to.be.lessThan(400, `Invalid response status code for link: ${url}`); 
+          }
+           });
+     }
+    });
+  });

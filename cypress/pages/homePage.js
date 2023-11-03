@@ -18,7 +18,6 @@ export class homePage{
      about:"a[id='HeaderMenu-about'] span"
     }
 
-
    clickDesignServices(){
     cy.get(this.homePageSelectors.designServices).click();
    }
@@ -26,5 +25,5 @@ export class homePage{
     cy.get(this.homePageSelectors.style).click();
     cy.get(this.homePageSelectors.freeStandingVanities).click();
    }
-        
+    
 }
