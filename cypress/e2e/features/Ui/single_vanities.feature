@@ -10,14 +10,13 @@ Feature: Single Vanities
         Scenario: Color filter test 
             When User clicks to Single Vanities
             And User clicks the Color Filter Button
-            And User clicks Green colour
-            Then The page should display only the vanities which are green 
-
+            Then User clicks all the colours one by one and check if the page displays only the vanities which are in the specific colour
+           
         Scenario: Size filter test
             When User clicks to Single Vanities
             And User clicks the Size Filter Button
-            And User clicks the size-18inch
-            Then The page should display only the vanities with size-18inch
+            Then User clicks all the sizes one by one and check if the page displays only the vanities with specific size
+            
 
         Scenario: Collection filter test
             When User clicks to Single Vanities

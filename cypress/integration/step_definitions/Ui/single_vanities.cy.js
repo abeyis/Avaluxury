@@ -14,6 +14,7 @@ When('User clicks to Single Vanities', () => {
 });
    
 
+
 // Scenario: Color filter test 
 
 let singleVanitiesPage=null
@@ -26,16 +27,24 @@ before(()=>{
     singleVanitiesPage.clickColorButton();
   });
   
-  And ('User clicks Green colour', () => {
-    singleVanitiesPage.clickGreenColour();
+
+  Then ('User clicks all the colours one by one and check if the page displays only the vanities which are in the specific colour' , () => {
+    
+    cy.get('button[data-fid][data-fvalue][title] span.gf-option-one-color').each(($colorButton) => {
+      const colorName = $colorButton.attr('title');
+    
+      cy.wrap($colorButton).click();
+    
+      cy.get('.h4.spf-product-card__title').should('be.visible').each(($productTitle) => {
+        const titleText = $productTitle.text();
+    
+        expect(titleText).to.contain(colorName);
+      } );
+    
+       cy.go('back'); 
+    });
   })
 
-  Then ('The page should display only the vanities which are green' , () => {
-    singleVanitiesPage.getHeaderOfProduct1().should('contain.text', 'Green');
-    singleVanitiesPage.getHeaderOfProduct2().should('contain.text', 'Green');
-    singleVanitiesPage.getHeaderOfProduct3().should('contain.text', 'Green');
-    singleVanitiesPage.getHeaderOfProduct4().should('contain.text', 'Green');
-  })
 
 
   // Scenario: Size filter test
@@ -44,14 +53,24 @@ before(()=>{
     singleVanitiesPage.clickSizeButton();
   })
 
-  And ('User clicks the size-18inch' , () => {
-    singleVanitiesPage.clickSize18inch();
+
+  Then ('User clicks all the sizes one by one and check if the page displays only the vanities with specific size' , () => {
+    
+    cy.get('button[data-fid^="98949"][data-fvalue][title]').each(($sizeButton) => {
+      const sizeName = $sizeButton.attr('data-fvalue');
+    
+      cy.wrap($sizeButton).click();
+    
+      cy.get('.h4.spf-product-card__title').should('be.visible').each(($productTitle) => {
+        const titleText = $productTitle.text();
+    
+        expect(titleText).to.contain(sizeName);
+      });
+    
+      cy.go('back');
+    });
   })
 
-  Then ('The page should display only the vanities with size-18inch' , () => {
-    singleVanitiesPage.getHeaderOfProduct5().should('contain.text', '18 Inch');
-    singleVanitiesPage.getHeaderOfProduct6().should('contain.text', '18 Inch');
-  })
 
   
   // Scenario : Collection filter test
@@ -89,12 +108,12 @@ before(()=>{
             }
           });
       
-          // Go back to the previous page
           cy.go('back');
         }
       });
   }
 });
+
 
 
 
