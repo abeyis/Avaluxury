@@ -136,7 +136,4 @@ export class freestandingPage{
             cy.get(this.freestandingPageSelectors.maxPriceInput).type(maxPrice)
             
         }
-            
-
         }
-    
