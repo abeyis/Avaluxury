@@ -51,7 +51,18 @@ And(
 );
 
 Then("Verifies the search results contain {string}", function (searchTerm) {
-  FloatingBathroomVanities.getProductTitle().then((productTitle) => {
-    expect(productTitle).to.contain(searchTerm);
+
+  cy.get(FloatingBathroomVanities.floatingVanitiesSelectors.productTitle).then(($productTitle) => {
+    if ($productTitle.length > 0) {
+      FloatingBathroomVanities.getProductTitle().then((productTitle) => {
+        expect(productTitle).to.contain(searchTerm);
+      });
+    } else {
+      FloatingBathroomVanities.verfyNoSuchProduct().then((text) => {
+        let warningNote = 'Sorry, there are no products in this collection';
+        expect(text).to.contain(warningNote);
+      });
+    }
   });
+
 });

@@ -7,6 +7,7 @@ export class floatingBathroomVanities {
     searchBox: "input[class='gf-controls-search-input']",
     productTitle: "div[class='h4 spf-product-card__title']",
     cartCount: "div.cart-count-bubble span[aria-hidden='true']",
+    noSuchProduct: "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
   };
 
   clickAddToCartButton() {
@@ -32,7 +33,6 @@ export class floatingBathroomVanities {
   getCartCount() {
     return (
       cy
-        // .get('div.cart-count-bubble span[aria-hidden="true"]')
         .get(this.floatingVanitiesSelectors.cartCount)
         .invoke("text")
         .then((text) => {
@@ -68,5 +68,16 @@ export class floatingBathroomVanities {
       .then((text) => {
         return text;
       });
+  };
+
+  verfyNoSuchProduct() {
+   return cy.get(this.floatingVanitiesSelectors.noSuchProduct)
+      .invoke("text")
+      .then((text) => {
+        return text;
+      });
   }
+
+
+
 }

@@ -17,6 +17,6 @@ Feature: Floating Bathroom Page
   Scenario: User searchs some products using Search box
     When Verify it is visible and clickable
     And User clicks search box
-    And User types various terms and submits such as "32 Inch High Gloss Black Veneto"
-    Then Verifies the search results contain "32 Inch High Gloss Black Veneto"
+    And User types various terms and submits such as "32 Inch Light Oak & Anthracite Babylon Oscar"
+    Then Verifies the search results contain "32 Inch Light Oak & Anthracite Babylon Oscar"
 
