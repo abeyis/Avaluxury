@@ -1,5 +1,5 @@
 
-export class SingeVanitiesPage{
+export class SingleVanitiesPage{
     
     singleVanitiesSelectors={
             colorButton:"span:contains('Color')" ,
@@ -8,6 +8,9 @@ export class SingeVanitiesPage{
             sizeButton: "span:contains('Size')",
             collectionButton: "span:contains('Collection')",
             priceButton: "span:contains('Price')",
+
+
+            addToCart_button: "button.spf-product__form-btn-addtocart"
 
     }
 
@@ -37,6 +40,39 @@ export class SingeVanitiesPage{
     clickBlackColour(){
         cy.get(this.singleVanitiesSelectors.blackColour).click()
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    
+    addToCartRandomProduct() {
+        const productSelectors = '.spf-product-card'; 
+      
+        cy.get(productSelectors).then((products) => {
+         
+          const randomIndex = Math.floor(Math.random() * products.length);
+          const randomProduct = products[randomIndex];
+      
+          
+          cy.wrap(randomProduct).find('button.spf-product__form-btn-addtocart').click();
+        });
+      };
+  
+      clickCheckOutButton(){
+        cy.get('button#checkout.cart__checkout-button.button[name="checkout"]').click();
+      }
+ 
 
 }
 
