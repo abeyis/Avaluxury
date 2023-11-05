@@ -1,5 +1,5 @@
 
-export class SingeVanitiesPage{
+export class SingleVanitiesPage{
     
     singleVanitiesSelectors={
             colorButton:"span:contains('Color')" ,
