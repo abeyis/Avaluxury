@@ -4,9 +4,9 @@
   "description": "Avaluxury Cypress UA Automation",
   "main": "index.js",
   "scripts": {
-    "test": "This is Avaluxury Site Automation with Cypress"
-  },
-  "author": "Abayis Group 8",
+    "test": "npx cypress run --env TAGS='@cloud' --record --key 4c50fd85-f072-4941-bcae-886c30143c69"
+   },
+  "author": "Abeyis Group 8",
   "license": "ISC",
   "devDependencies": {
     "cucumber": "^6.0.7",
