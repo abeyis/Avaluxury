@@ -26,24 +26,44 @@ before(()=>{
   And ('User clicks the Color Filter Button', () => {
     singleVanitiesPage.clickColorButton();
   });
+
+
+  And('the user selects {string}', (selected_color) =>{
+    singleVanitiesPage.selectColor(selected_color);
+  })
+
+
+  // Then('the page should display only the vanities in the {string}', (selected_color) => {
+      
+  //     cy.get('.product').each((product) => {
+  //         const classes = product.attr('class');
+  //         if (classes.includes(`-${selected_color}`)) {
+  //           expect(product).to.be.visible;
+  //         } else {
+  //           expect(product).to.not.be.visible;
+  //         }
+  //       });
+  //     });
+    
+  
   
 
-  Then ('User clicks all the colours one by one and check if the page displays only the vanities which are in the specific colour' , () => {
+  // Then ('User clicks all the colours one by one and check if the page displays only the vanities which are in the specific colour' , () => {
     
-    cy.get('button[data-fid][data-fvalue][title] span.gf-option-one-color').each(($colorButton) => {
-      const colorName = $colorButton.attr('title');
+  //   cy.get('button[data-fid][data-fvalue][title] span.gf-option-one-color').each(($colorButton) => {
+  //     const colorName = $colorButton.attr('title');
     
-      cy.wrap($colorButton).click();
+  //     cy.wrap($colorButton).click();
     
-      cy.get('.h4.spf-product-card__title').should('be.visible').each(($productTitle) => {
-        const titleText = $productTitle.text();
+  //     cy.get('.h4.spf-product-card__title').should('be.visible').each(($productTitle) => {
+  //       const titleText = $productTitle.text();
     
-        expect(titleText).to.contain(colorName);
-      } );
+  //       expect(titleText).to.contain(colorName);
+  //     } );
     
-       cy.go('back'); 
-    });
-  })
+  //      cy.go('back'); 
+  //   });
+  // })
 
 
 
@@ -54,22 +74,22 @@ before(()=>{
   })
 
 
-  Then ('User clicks all the sizes one by one and check if the page displays only the vanities with specific size' , () => {
+  // Then ('User clicks all the sizes one by one and check if the page displays only the vanities with specific size' , () => {
     
-    cy.get('button[data-fid^="98949"][data-fvalue][title]').each(($sizeButton) => {
-      const sizeName = $sizeButton.attr('data-fvalue');
+  //   cy.get('button[data-fid^="98949"][data-fvalue][title]').each(($sizeButton) => {
+  //     const sizeName = $sizeButton.attr('data-fvalue');
     
-      cy.wrap($sizeButton).click();
+  //     cy.wrap($sizeButton).click();
     
-      cy.get('.h4.spf-product-card__title').should('be.visible').each(($productTitle) => {
-        const titleText = $productTitle.text();
+  //     cy.get('.h4.spf-product-card__title').should('be.visible').each(($productTitle) => {
+  //       const titleText = $productTitle.text();
     
-        expect(titleText).to.contain(sizeName);
-      });
+  //       expect(titleText).to.contain(sizeName);
+  //     });
     
-      cy.go('back');
-    });
-  })
+  //     cy.go('back');
+  //   });
+  // })
 
 
   

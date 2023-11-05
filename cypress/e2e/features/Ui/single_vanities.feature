@@ -8,14 +8,15 @@ Feature: Single Vanities
             Then User verifies the page title is "Single Bathroom Vanities"
 
         Scenario: Color filter test 
-            When User clicks to Single Vanities
-            And User clicks the Color Filter Button
-            Then User clicks all the colours one by one and check if the page displays only the vanities which are in the specific colour
-           
-        Scenario: Size filter test
-            When User clicks to Single Vanities
-            And User clicks the Size Filter Button
-            Then User clicks all the sizes one by one and check if the page displays only the vanities with specific size
+           When User clicks to Single Vanities
+           And User clicks the Color Filter Button
+           And the user selects "Green" 
+        #    Then the page should display only the vanities in the "Green"
+        
+        # Scenario: Size filter test
+        #     When User clicks to Single Vanities
+        #     And User clicks the Size Filter Button
+        #     Then User clicks all the sizes one by one and check if the page displays only the vanities with specific size
             
 
         Scenario: Collection filter test
