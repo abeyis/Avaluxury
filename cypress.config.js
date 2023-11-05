@@ -2,7 +2,7 @@ const cucumber = require('cypress-cucumber-preprocessor').default
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "n8qri5",
+  projectId: "jfog1g",
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -14,8 +14,6 @@ module.exports = defineConfig({
   },
   env:{
     avaluxury_endpoint:'https://avaluxu.myshopify.com/',
-    CYPRESS_RECORD_KEY:"4c50fd85-f072-4941-bcae-886c30143c69"
-
-
+    CYPRESS_RECORD_KEY:"cc24700e-4019-4a08-a0e6-9b3d6d7a5a42"
   }
 });
