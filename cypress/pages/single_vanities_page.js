@@ -40,7 +40,9 @@ export class SingleVanitiesPage{
        return cy.get('.spf-product-card__title')
     }
     
-
+    selectSize(selected_size) {
+        cy.get(`button[data-fid="98949"][title="${selected_size}"]`).click();
+    }
 
 }
 

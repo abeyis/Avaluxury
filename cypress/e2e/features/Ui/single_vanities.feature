@@ -13,12 +13,12 @@ Feature: Single Vanities
            And the user selects "Green" 
            Then the page should display only the vanities in the "Green" color
         
-        # Scenario: Size filter test
-        #     When User clicks to Single Vanities
-        #     And User clicks the Size Filter Button
-        #     Then User clicks all the sizes one by one and check if the page displays only the vanities with specific size
+        Scenario: Size filter test
+            When User clicks to Single Vanities
+            And User clicks the Size Filter Button
+            And User selects "18 Inch"
+            Then the page should display only the vanities which are size "18 Inch"
             
-
         Scenario: Collection filter test
             When User clicks to Single Vanities
             And User clicks Collection Filter Button
