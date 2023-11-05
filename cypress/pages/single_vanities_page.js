@@ -7,18 +7,6 @@ export class SingleVanitiesPage{
             collectionButton: "div.h3>span:contains('Collection')",
                 singleBathroomVanitiesCollection: 'button[role="checkbox"][aria-checked="true"][data-fid="98973"][data-fvalue="461776847121"][title="Single Bathroom Vanities"]', 
             priceButton: "div.h3>span:contains('Price')",
-        //colours
-            // green: 'button[data-fvalue="Green"]',
-            // darkOak: 'button[data-fvalue="Dark Oak"]',
-            // highGlossBlack: 'button[data-fvalue="High Gloss Black"]',
-            // highGlossAnthracite:'button[data-fvalue="High Gloss Anthracite"]',
-            // beechwood:'button[data-fvalue="Beechwood"]',
-            // cappuccino: 'button[data-fvalue="Cappuccino"]',
-            // darkOak_black:'button[data-fvalue="Dark Oak & Black"]',
-            // gray: 'button[data-fvalue="Gray"]',
-            // highGlossWhite: 'button[data-fvalue="High Gloss White"]',
-            // lightOak_anthracite:'button[data-fvalue="Light Oak & Anthracite"]',
-            // mint: 'button[data-fvalue="Mint"]'
         }
 
 
@@ -45,7 +33,11 @@ export class SingleVanitiesPage{
 
     
     selectColor(selected_color) {
-        cy.get(`button[data-fvalue="${selected_color}"]`).click().click().click();
+        cy.get(`button[data-fvalue="${selected_color}"]`).click();
+    }
+
+    getProductsInThePage(){
+       return cy.get('.spf-product-card__title')
     }
     
 

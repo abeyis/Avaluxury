@@ -32,18 +32,19 @@ before(()=>{
     singleVanitiesPage.selectColor(selected_color);
   })
 
-
-  // Then('the page should display only the vanities in the {string}', (selected_color) => {
+  Then('the page should display only the vanities in the {string} color', (selected_color) => {
       
-  //     cy.get('.product').each((product) => {
-  //         const classes = product.attr('class');
-  //         if (classes.includes(`-${selected_color}`)) {
-  //           expect(product).to.be.visible;
-  //         } else {
-  //           expect(product).to.not.be.visible;
-  //         }
-  //       });
-  //     });
+    singleVanitiesPage.getProductsInThePage().each((productTitle) => {
+    
+      const productName = productTitle.find('a').text();
+    
+      if (productName.includes(selected_color)) {
+       
+        cy.wrap(productName).should('contain', selected_color);
+      }
+    });
+  
+  });
     
   
   

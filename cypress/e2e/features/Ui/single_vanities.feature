@@ -11,7 +11,7 @@ Feature: Single Vanities
            When User clicks to Single Vanities
            And User clicks the Color Filter Button
            And the user selects "Green" 
-        #    Then the page should display only the vanities in the "Green"
+           Then the page should display only the vanities in the "Green" color
         
         # Scenario: Size filter test
         #     When User clicks to Single Vanities
