@@ -3,9 +3,11 @@ export class floatingBathroomVanities {
     addToCart: ".spf-product__form-btn-addtocart",
     cartIcon: "#cart-icon-bubble",
     deleteIcon: ".button--tertiary",
-    cartEpmtyText: ".cart__empty-text"
-
-    
+    cartEpmtyText: ".cart__empty-text",
+    searchBox: "input[class='gf-controls-search-input']",
+    productTitle: "div[class='h4 spf-product-card__title']",
+    cartCount: "div.cart-count-bubble span[aria-hidden='true']",
+    noSuchProduct: "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
   };
 
   clickAddToCartButton() {
@@ -21,25 +23,60 @@ export class floatingBathroomVanities {
   }
 
   verifyCartIsEmpty() {
-    cy.get('.cart__empty-text').invoke('text').then((text) => {
-     
-      assert.equal(text, 'Your cart is empty');
-  });   
-  };
+    cy.get(this.floatingVanitiesSelectors.cartEpmtyText)
+      .invoke("text")
+      .then((text) => {
+        assert.equal(text, "Your cart is empty");
+      });
+  }
 
   getCartCount() {
-    return cy.get('div.cart-count-bubble span[aria-hidden="true"]').invoke('text').then((text) => {
-      return parseInt(text);
-    });
-  };
+    return (
+      cy
+        .get(this.floatingVanitiesSelectors.cartCount)
+        .invoke("text")
+        .then((text) => {
+          return parseInt(text);
+        })
+    );
+  }
 
   clickAddToCartButtonWithIndex(index) {
     cy.get(this.floatingVanitiesSelectors.addToCart).eq(index).click();
+  }
+
+  clickSearhBox() {
+    cy.get(this.floatingVanitiesSelectors.searchBox).click();
+  }
+
+  verifySearchBoxVisibleAndClickable() {
+    cy.get(this.floatingVanitiesSelectors.searchBox)
+      .should("be.visible")
+      .and("be.enabled");
+  }
+
+  searchProductOnFloatingVanitisPage(productDetail) {
+    cy.get(this.floatingVanitiesSelectors.searchBox)
+      .type(productDetail)
+      .type("{enter}");
+  }
+
+  getProductTitle() {
+    return cy
+      .get(this.floatingVanitiesSelectors.productTitle)
+      .invoke("text")
+      .then((text) => {
+        return text;
+      });
   };
 
-
-
-
+  verfyNoSuchProduct() {
+   return cy.get(this.floatingVanitiesSelectors.noSuchProduct)
+      .invoke("text")
+      .then((text) => {
+        return text;
+      });
+  }
 
 
 
