@@ -38,6 +38,26 @@ export class SingeVanitiesPage{
         cy.get(this.singleVanitiesSelectors.blackColour).click()
     }
 
+
+
+
+
+
+
+
+    
+    clickSearchBox_and_typeSearchWord (search_word) {
+        cy.get('input.gf-controls-search-input[name="q"][placeholder="Search products"]')
+          .click()
+          .type(search_word + '{enter}');
+    };
+      
+
+    getProductsInThePage(){
+     return cy.get('.spf-product-card__title')
+ }
+
+
 }
 
 

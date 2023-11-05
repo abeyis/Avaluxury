@@ -12,3 +12,22 @@ Feature: Single Vanities Button Functionality
 
    
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Scenario: Search Box Test for Single Vanities Page
+        When User clicks to Single Vanities
+        And User types "oak" in the search box and press enter
+        Then The page should display the products which contain the "oak" word in the product info
