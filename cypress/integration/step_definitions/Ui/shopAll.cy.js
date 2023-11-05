@@ -36,9 +36,9 @@ And("User clicks on random Add to Cart", function () {
 });
 
 And("User clicks on Continue Shopping", function () {
- ShopAllPage.clickOnContinueShopping();
+  ShopAllPage.clickOnContinueShopping();
 });
 
 And("User verifies they are on the all page", function () {
-  cy.url().should('eq', 'https://avaluxury.com/collections/all');
- });
+  cy.url().should("eq", "https://avaluxury.com/collections/all");
+});
