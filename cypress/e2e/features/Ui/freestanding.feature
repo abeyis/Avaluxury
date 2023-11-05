@@ -7,12 +7,12 @@ Scenario: color check
 When user goes to freestanding vanities page
 And user picks "Navy Blue" as color 
 Then user should see only "Navy Blue" products
-"""
+
 Scenario: user size control
 When the user clicks on the size
 And the user must see "18" all dimensions 
 Then the user should be "18" able to select the size
-
+"""
 Scenario: product search box control
 When the user clicks on the search box
 And the user chooses "Gray Selena" the product 
