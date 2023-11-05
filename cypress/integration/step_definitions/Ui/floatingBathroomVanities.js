@@ -51,18 +51,26 @@ And(
 );
 
 Then("Verifies the search results contain {string}", function (searchTerm) {
-
-  cy.get(FloatingBathroomVanities.floatingVanitiesSelectors.productTitle).then(($productTitle) => {
-    if ($productTitle.length > 0) {
-      FloatingBathroomVanities.getProductTitle().then((productTitle) => {
-        expect(productTitle).to.contain(searchTerm);
-      });
-    } else {
-      FloatingBathroomVanities.verfyNoSuchProduct().then((text) => {
-        let warningNote = 'Sorry, there are no products in this collection';
-        expect(text).to.contain(warningNote);
-      });
+  cy.get(FloatingBathroomVanities.floatingVanitiesSelectors.productTitle).then(
+    ($productTitle) => {
+      if ($productTitle.length > 0) {
+        FloatingBathroomVanities.getProductTitle().then((productTitle) => {
+          expect(productTitle).to.contain(searchTerm);
+        });
+      } else {
+        FloatingBathroomVanities.verfyNoSuchProduct().then((text) => {
+          let warningNote = "Sorry, there are no products in this collection";
+          expect(text).to.contain(warningNote);
+        });
+      }
     }
-  });
+  );
+});
 
+When("User clicks on a product", function () {
+  FloatingBathroomVanities.clickAProductRandomly();
+});
+
+Then("User vify product details are visible", function () {
+  FloatingBathroomVanities.verifyProductDetailsAreVisibleAndClickable();
 });

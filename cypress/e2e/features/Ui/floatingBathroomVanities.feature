@@ -20,3 +20,6 @@ Feature: Floating Bathroom Page
     And User types various terms and submits such as "32 Inch Light Oak & Anthracite Babylon Oscar"
     Then Verifies the search results contain "32 Inch Light Oak & Anthracite Babylon Oscar"
 
+  Scenario: User can see product details on Floating Bathroom Page
+    When User clicks on a product
+    Then User vify product details are visible

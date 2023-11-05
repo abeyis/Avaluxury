@@ -7,7 +7,22 @@ export class floatingBathroomVanities {
     searchBox: "input[class='gf-controls-search-input']",
     productTitle: "div[class='h4 spf-product-card__title']",
     cartCount: "div.cart-count-bubble span[aria-hidden='true']",
-    noSuchProduct: "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
+    noSuchProduct:
+      "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
+  };
+
+  productDetailsSelectors = {
+    title: "div[class='product__title']",
+    color: "h2[class='cbb-also-bought-title']",
+    price: "span[class='price-item price-item--regular']",
+    quantity: "input[class='quantity__input']",
+    addToCart: "button[name='add']",
+    description:
+      "div[class='smart-tabs-navigation-li smart-tabs-navigation-li-active']",
+    shippingAndReturn: "div.smart-tabs-navigation-wrapper div:nth-of-type(2)",
+    review: "div.smart-tabs-navigation-wrapper div:nth-of-type(3)",
+    viewStoreInformation: "#ShowPickupAvailabilityDrawer",
+    buyWithShopPay: "div[data-testid='ShopifyPay-button']",
   };
 
   clickAddToCartButton() {
@@ -31,14 +46,12 @@ export class floatingBathroomVanities {
   }
 
   getCartCount() {
-    return (
-      cy
-        .get(this.floatingVanitiesSelectors.cartCount)
-        .invoke("text")
-        .then((text) => {
-          return parseInt(text);
-        })
-    );
+    return cy
+      .get(this.floatingVanitiesSelectors.cartCount)
+      .invoke("text")
+      .then((text) => {
+        return parseInt(text);
+      });
   }
 
   clickAddToCartButtonWithIndex(index) {
@@ -68,16 +81,69 @@ export class floatingBathroomVanities {
       .then((text) => {
         return text;
       });
-  };
+  }
 
   verfyNoSuchProduct() {
-   return cy.get(this.floatingVanitiesSelectors.noSuchProduct)
+    return cy
+      .get(this.floatingVanitiesSelectors.noSuchProduct)
       .invoke("text")
       .then((text) => {
         return text;
       });
   }
 
+  clickAProductRandomly() {
+    return cy
+      .get(this.floatingVanitiesSelectors.productTitle)
+      .then(($products) => {
+        let numbersOfProducts = $products.length;
 
+        function getRandomNumber() {
+          return Math.floor(Math.random() * numbersOfProducts);
+        }
+        const randomNum = getRandomNumber();
+        console.log(randomNum);
+        cy.get(this.floatingVanitiesSelectors.productTitle)
+          .eq(randomNum)
+          .click();
+      });
+  }
 
+  verifyProductDetailsAreVisibleAndClickable() {
+    cy.get(this.productDetailsSelectors.addToCart)
+      .scrollIntoView()
+      .should("be.visible")
+      .and("be.enabled");
+
+    cy.get(this.productDetailsSelectors.color)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.description)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.quantity)
+      .scrollIntoView()
+      .should("be.visible")
+      .and("be.enabled");
+    cy.get(this.productDetailsSelectors.review)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.price)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.shippingAndReturn)
+      .scrollIntoView()
+      .should("be.visible");
+    cy.get(this.productDetailsSelectors.title)
+      .scrollIntoView()
+      .should("be.visible");
+    cy.get(this.productDetailsSelectors.viewStoreInformation)
+      .scrollIntoView()
+      .should("be.visible")
+      .and("be.enabled");
+  }
 }
