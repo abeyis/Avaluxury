@@ -15,7 +15,8 @@ export class homePage{
      designServices:"a[id='HeaderMenu-design-services'] span",
      blog:"a[id='HeaderMenu-blog'] span",
      contact:"a[id='HeaderMenu-contact'] span",
-     about:"a[id='HeaderMenu-about'] span"
+     about:"a[id='HeaderMenu-about'] span",
+     shopAll:'a[id="HeaderMenu-shop-all"] span'
     }
 
    clickDesignServices(){
@@ -50,6 +51,25 @@ export class homePage{
 
   clickDoubleVanities(){
     cy.get(this.homePageSelectors.doubleVanities).click();
+   }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+   clickShopAll(){
+    cy.get(this.homePageSelectors.shopAll).click();
+
    }
     
  }
