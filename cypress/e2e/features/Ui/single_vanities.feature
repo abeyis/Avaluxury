@@ -3,6 +3,7 @@ Feature: Single Vanities
     Background: User is on the home page
         Given User navigates to Home Page
 
+       @cloud
         Scenario: "Single Vanities" button functionality test
             When User clicks to Single Vanities
             Then User verifies the page title is "Single Bathroom Vanities"
@@ -25,11 +26,9 @@ Feature: Single Vanities
             And User clicks the Single Bathroom Vanities
             Then The page should display only the Single vanities
 
-       
-
 
 
   
 
-   
-    
+
+
