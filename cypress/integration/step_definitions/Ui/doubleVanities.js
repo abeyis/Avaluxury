@@ -1,10 +1,15 @@
 
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import { homePage } from "../../../pages/homePage";
+import { doubleVanitiesPage } from "../../../pages/doubleVanitiesPage";
+
 
 let HomePage=null
+let DoubleVanitiesPage=null
 before(()=>{
+  DoubleVanitiesPage=new doubleVanitiesPage();
   HomePage =new homePage();
+  
 })
 
 When('User clicks to Double Bathroom Vanities', () => {
@@ -16,18 +21,8 @@ When('I should see all links are working', () => {
 });
 
 When("I enter {string} into the search box", (searchTerm) => {
-    cy.typeAndEnter('input.gf-controls-search-input', searchTerm);
-    
-});
+    cy.typeAndEnter(DoubleVanitiesPage.doubleVanitiesPageSelectors.searchField, searchTerm);
 
-Then("I should see {string} results for {string}", (expectedResultCount,searchTerm) => {
-  cy.checkSearchResults(expectedResultCount, searchTerm);
-});
-  
-
-When("I enter {string} into the search box", (searchTerm) => {
-    cy.typeAndEnter('input.gf-controls-search-input', searchTerm);
-    
 });
 
 Then('I should see search results for {string}', (searchTerm) => {
