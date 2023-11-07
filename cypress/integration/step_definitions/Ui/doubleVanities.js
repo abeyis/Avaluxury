@@ -33,18 +33,18 @@ When('I should see all links are working', () => {
 
 
 
- When('I visit the color selector page', () => {
-    cy.get('span:contains("Color")').each(($el) => {
-      cy.wrap($el).click();
-    });
-  });
-When('I select a color option {string}', (selectedColor) => {
-    cy.get(`button[title="${selectedColor}"]`).click();
+  When('I visit the color selector page', () => {
+    DoubleVanitiesPage.visitColorSelectorPage();
+   });
+  
+   When('I select a color option {string}', (selectedColor) => {
+    DoubleVanitiesPage.selectColorOption(selectedColor);
   });
   
-  Then('I should see that the selected color {string} is checked', (selectedColor) => {
-    cy.get(`button[title="${selectedColor}"]`).should('have.attr', 'aria-checked', 'true');
-  });
+    
+    Then('I should see that the selected color {string} is checked', (selectedColor) => {
+      DoubleVanitiesPage.checkSelectedColorIsChecked(selectedColor);
+    });
 
 
  When('I locate the email subscription box at the bottom of the website', () => {
@@ -59,5 +59,4 @@ When('I select a color option {string}', (selectedColor) => {
   And('I click the subscribe button', () => {
     DoubleVanitiesPage.clickSubscribeButton();
   });
-
 

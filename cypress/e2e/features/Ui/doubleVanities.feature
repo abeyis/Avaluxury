@@ -50,4 +50,5 @@ Scenario Outline: Subscribe Our Email
    Examples:
    |email|
    |selma.berg@abeyis.com|
+   
 
