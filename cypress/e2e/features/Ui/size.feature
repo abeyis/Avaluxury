@@ -1,15 +1,19 @@
 
-Feature: Size 
+Feature: Size
+
 
 
 Background: User is on the home page
 Given User navigates to Home Page
 
-    Scenario Outline: Size Tab
-    When User clicks to size tab 
-    And User chooses "<size>" from list
-    Then User verifies the result page cantains only items with "<size>"
+    Background: User is on the home page
+        Given User navigates to Home Page
 
+    @cloud
+    Scenario Outline: Size Tab
+        When User clicks to size tab
+        And User chooses "<size>" from list
+        Then User verifies the result page cantains only items with "<size>"
     Examples:
     | size| 
     | 18  | 
@@ -29,7 +33,6 @@ Given User navigates to Home Page
     When User clicks to size tab 
     And User chooses "<size>" from list
     Then User verifies the result page url contains "<size>"
-
     Examples:
     | size| 
     | 18  | 
