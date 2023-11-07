@@ -51,18 +51,65 @@ And(
 );
 
 Then("Verifies the search results contain {string}", function (searchTerm) {
-
-  cy.get(FloatingBathroomVanities.floatingVanitiesSelectors.productTitle).then(($productTitle) => {
-    if ($productTitle.length > 0) {
-      FloatingBathroomVanities.getProductTitle().then((productTitle) => {
-        expect(productTitle).to.contain(searchTerm);
-      });
-    } else {
-      FloatingBathroomVanities.verfyNoSuchProduct().then((text) => {
-        let warningNote = 'Sorry, there are no products in this collection';
-        expect(text).to.contain(warningNote);
-      });
+  cy.get(FloatingBathroomVanities.floatingVanitiesSelectors.productTitle).then(
+    ($productTitle) => {
+      if ($productTitle.length > 0) {
+        FloatingBathroomVanities.getProductTitle().then((productTitle) => {
+          expect(productTitle).to.contain(searchTerm);
+        });
+      } else {
+        FloatingBathroomVanities.verfyNoSuchProduct().then((text) => {
+          let warningNote = "Sorry, there are no products in this collection";
+          expect(text).to.contain(warningNote);
+        });
+      }
     }
+  );
+});
+
+When("User clicks on a product", function () {
+  FloatingBathroomVanities.clickAProductRandomly();
+});
+
+Then("User vify product details are visible", function () {
+  FloatingBathroomVanities.verifyProductDetailsAreVisibleAndClickable();
+});
+
+When("User clicks on color button", function () {
+  FloatingBathroomVanities.clickColorButton();
+});
+
+And("Select a color", function () {
+  FloatingBathroomVanities.SelectAColorRandomly();
+});
+
+Then(
+  "Verifies the filter should show the product list of the selected product",
+  function () {
+    let listedProductTitle;
+    let selectedProduct;
+
+    return FloatingBathroomVanities.getSelectedProduct().then((product) => {
+      selectedProduct = product;
+      return FloatingBathroomVanities.getProductTitle().then((title) => {
+        listedProductTitle = title;
+        expect(listedProductTitle).to.contain(selectedProduct);
+      });
+    });
   });
 
-});
+  When("User clicks on size button", function(){
+FloatingBathroomVanities.clickColorButton();
+
+  });
+
+
+  And("Select a size", function(){
+FloatingBathroomVanities.selectASizeRandomly();
+
+  });
+
+
+
+
+
