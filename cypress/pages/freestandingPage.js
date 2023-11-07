@@ -13,13 +13,12 @@ export class freestandingPage{
         colorNavyBlue:"button[title='Navy Blue']",
         colorWhite:"button[title='White']",
 
-        productColor:"div.h4.spf-product-card__title>a",
-     //  t:'#HeaderMenu-sizes-' + chosenSize + '-inch',
+        productTitle:"div.h4.spf-product-card__title>a",
+     //  t:'#HeaderMenu-sizes-' + chosenSize + '-inch', div.h4.spf-product-card__title a
         
-
-
+        
         sizeTitle:"div[class='gf-block-title']",
-    //    size: "div[data-filter-id='98949']",
+        size: "div[data-filter-id='98949']",
         size18: "button[title='18 Inch']",
         size24: "button[title='24 Inch']",
         size30: "button[title='30 Inch']",
@@ -32,7 +31,11 @@ export class freestandingPage{
         price:"div[data-filter-id='98943']",
         minPriceInput:"#min-98943",
         maxPriceInput:"#max-98943",
-      
+
+        searchProducts:".gf-controls-search-form",
+        graySelena:".h4 spf-product-card__title",
+        graySelenaDoubleSink:"#MediaGallery-template--21128380580113__main",
+
 
         yourCart:"h1[class='title title--primary']",
         yourCartContinueShopping:".underlined-link",
@@ -77,11 +80,12 @@ export class freestandingPage{
    
     chooseColor(color) {
         cy.get('button[data-fvalue='+`${color}` + '] span').click();
+        cy.wait(600)
       }
 
 
     verifyProductColor(color){
-        cy.get(this.freestandingPageSelectors.productColor).each((item)=>{
+        cy.get(this.freestandingPageSelectors.productTitle).each((item)=>{
             cy.log(item)
             expect(item).to.contain(color);
             cy.wait(3000)
@@ -94,27 +98,36 @@ export class freestandingPage{
             switch (size) {
                 case "18 Inch":
                     cy.get(this.freestandingPageSelectors.size18).click()
+                    cy.wait(600)
                     break
+
                 case "24 Inch":
                     cy.get(this.freestandingPageSelectors.size24).click()
+                    cy.wait(600)
                     break
                 case "30 Inch":
                     cy.get(this.freestandingPageSelectors.size30).click()
+                    cy.wait(600)
                     break
                 case "36 Inch":
                     cy.get(this.freestandingPageSelectors.size36).click()
+                    cy.wait(600)
                     break
                 case "40 Inch":
                     cy.get(this.freestandingPageSelectors.size40).click()
+                    cy.wait(600)
                     break
                 case "48 Inch":
                     cy.get(this.freestandingPageSelectors.size48).click()
+                    cy.wait(600)
                     break
                 case "60 Inch":
                     cy.get(this.freestandingPageSelectors.size60).click()
+                    cy.wait(600)
                     break
                 case "72 Inch":
                     cy.get(this.freestandingPageSelectors.size72).click()
+                    cy.wait(600)
                     break
                 default:
                     throw new Error("There is no such size");
@@ -122,7 +135,7 @@ export class freestandingPage{
         }
 
         verifyProductSize(size){
-            cy.get(this.freestandingPageSelectors.productSize).each((item)=>{
+            cy.get(this.freestandingPageSelectors.productTitle).each((item)=>{
                 cy.log(item)
                 expect(item).to.contain(size);
             })

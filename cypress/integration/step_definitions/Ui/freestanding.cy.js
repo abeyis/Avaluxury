@@ -27,7 +27,7 @@ FreestandingPage.verifyProductColor(color);
 Given('User navigates to Home Page', () => {
   FreestandingPage.pickColor()
 });
-/*
+
 When('the user clicks on the size', () => {
   HomePage.clickFreestanding()
 });
@@ -38,15 +38,20 @@ FreestandingPage.pickSize(size)
 Then('the user should be {string} able to select the size', (size) => {
   FreestandingPage.verifyProductSize(size);
 });
-*/
 
+/*
 When('the user clicks on the search box', () => {
+  
+});
+And('the user chooses {string} the product',()=>{
+
+})
+
+Then('the user should only see the selected {string} product', (product) => {
 });
 
 When('the user chooses {string} the product', (product) => {
-});
-
-Then('the user should only see the selected {string} product', (product) => {
+  
 });
 
 When('the user clicks the add to cart box', () => {
@@ -84,3 +89,4 @@ Then('the user should be able to select the desired sort list', (number) => {
 
 Then('the user should be redirected to the detail page of the product', () => {
 });
+*/
