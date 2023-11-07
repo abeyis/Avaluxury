@@ -39,12 +39,14 @@ Scenario:Add Double Bathroom Vanities to the shopping cart
         Then User clicks on random Add to Cart
         And User clicks on Continue Shopping
         And User verifies they are on the all page
+        
      @Test    
 Scenario Outline: Subscribe Our Email 
     Given User clicks to Double Bathroom Vanities
     When I locate the email subscription box at the bottom of the website
     Then I enter a valid email address '<email>'
     And I click the subscribe button
+
    Examples:
    |email|
    |selma.berg@abeyis.com|
