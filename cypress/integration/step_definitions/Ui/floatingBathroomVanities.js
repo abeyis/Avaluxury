@@ -74,3 +74,42 @@ When("User clicks on a product", function () {
 Then("User vify product details are visible", function () {
   FloatingBathroomVanities.verifyProductDetailsAreVisibleAndClickable();
 });
+
+When("User clicks on color button", function () {
+  FloatingBathroomVanities.clickColorButton();
+});
+
+And("Select a color", function () {
+  FloatingBathroomVanities.SelectAColorRandomly();
+});
+
+Then(
+  "Verifies the filter should show the product list of the selected product",
+  function () {
+    let listedProductTitle;
+    let selectedProduct;
+
+    return FloatingBathroomVanities.getSelectedProduct().then((product) => {
+      selectedProduct = product;
+      return FloatingBathroomVanities.getProductTitle().then((title) => {
+        listedProductTitle = title;
+        expect(listedProductTitle).to.contain(selectedProduct);
+      });
+    });
+  });
+
+  When("User clicks on size button", function(){
+FloatingBathroomVanities.clickColorButton();
+
+  });
+
+
+  And("Select a size", function(){
+FloatingBathroomVanities.selectASizeRandomly();
+
+  });
+
+
+
+
+

@@ -9,6 +9,11 @@ export class floatingBathroomVanities {
     cartCount: "div.cart-count-bubble span[aria-hidden='true']",
     noSuchProduct:
       "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
+    colorButton: "div.gf-option-98948 > div.gf-block-title span",
+    colorTable: "button[data-fid='98948']",
+    selectedProduct: "#gf-tree strong > span",
+    sizeButton: "div.gf-option-98949 > div.gf-block-title span",
+    sizeTable: "li[class='gf-box-rectangle']",
   };
 
   productDetailsSelectors = {
@@ -145,5 +150,54 @@ export class floatingBathroomVanities {
       .scrollIntoView()
       .should("be.visible")
       .and("be.enabled");
+  }
+
+  SelectAColorRandomly() {
+    return cy.get(this.floatingVanitiesSelectors.colorTable).then(($colar) => {
+      let numbersOfColor = $colar.length;
+
+      function getRandomNumber() {
+        return Math.floor(Math.random() * numbersOfColor);
+      }
+      const randomNum = getRandomNumber();
+      console.log(randomNum);
+      return cy
+        .get(this.floatingVanitiesSelectors.colorTable)
+        .eq(randomNum)
+        .click({force: true});
+    });
+  }
+
+  clickColorButton() {
+    cy.get(this.floatingVanitiesSelectors.colorButton).click();
+  }
+
+  getSelectedProduct() {
+    return cy
+      .get(this.floatingVanitiesSelectors.selectedProduct)
+      .invoke("text")
+      .then((text) => {
+        return text;
+      });
+  }
+
+  clickColorButton() {
+    cy.get(this.floatingVanitiesSelectors.sizeButton).click();
+  }
+
+  selectASizeRandomly() {
+    return cy.get(this.floatingVanitiesSelectors.sizeTable).then(($size) => {
+      let numbersOfSize = $size.length;
+
+      function getRandomNumber() {
+        return Math.floor(Math.random() * numbersOfSize);
+      }
+      const randomNum = getRandomNumber();
+      console.log(randomNum);
+      return cy
+        .get(this.floatingVanitiesSelectors.sizeTable)
+        .eq(randomNum)
+        .click({ force: true });
+    });
   }
 }
