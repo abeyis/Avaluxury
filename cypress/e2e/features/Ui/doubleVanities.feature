@@ -1,6 +1,6 @@
 Feature: Double Vanities
 
-    Background: User is on the home page
+       Background: User is on the home page
         Given User navigates to Home Page
     Scenario:
         When User clicks to Double Bathroom Vanities
@@ -32,3 +32,20 @@ Examples:
   | High Gloss White |
   | Matte Cashmere |
   | High Gloss Anthracite|
+
+
+Scenario:Add Double Bathroom Vanities to the shopping cart
+        Given User clicks to Double Bathroom Vanities
+        Then User clicks on random Add to Cart
+        And User clicks on Continue Shopping
+        And User verifies they are on the all page
+     @Test    
+Scenario Outline: Subscribe Our Email 
+    Given User clicks to Double Bathroom Vanities
+    When I locate the email subscription box at the bottom of the website
+    Then I enter a valid email address '<email>'
+    And I click the subscribe button
+   Examples:
+   |email|
+   |selma.berg@abeyis.com|
+
