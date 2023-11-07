@@ -55,7 +55,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
 
   Cypress.Commands.add('verifySearchResults', (searchTerm) => {
-  cy.get('#gf-products .spf-product-card__inner').each((productCard) => {
+   cy.get('#gf-products .spf-product-card__inner').each((productCard) => {
     const productTitle = productCard.find('a').attr('title');
   
     console.log(`Product Title: ${productTitle}`);

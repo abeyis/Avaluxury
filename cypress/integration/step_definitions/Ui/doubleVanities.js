@@ -28,3 +28,4 @@ When("I enter {string} into the search box", (searchTerm) => {
 Then('I should see search results for {string}', (searchTerm) => {
     cy.verifySearchResults(searchTerm);
   });
+  
