@@ -3,10 +3,17 @@ Feature: Single Vanities
     Background: User is on the home page
         Given User navigates to Home Page
 
+<<<<<<< HEAD
     @cloud
     Scenario: Clicking the "Single Vanities" button redirects to Single Bathroom Vanities page
         When User clicks to Single Vanities
         Then User verifies the page title is "Single Bathroom Vanities"
+=======
+       @cloud
+        Scenario: "Single Vanities" button functionality test
+            When User clicks to Single Vanities
+            Then User verifies the page title is "Single Bathroom Vanities"
+>>>>>>> d3e259fb9aca37b6c32f256d15cfcf56f6e573b5
 
         Scenario: Color filter test 
            When User clicks to Single Vanities
@@ -26,10 +33,14 @@ Feature: Single Vanities
             And User clicks the Single Bathroom Vanities
             Then The page should display only the Single vanities
 
+<<<<<<< HEAD
        
 
+=======
+>>>>>>> d3e259fb9aca37b6c32f256d15cfcf56f6e573b5
 
 
+  
 
 
 
