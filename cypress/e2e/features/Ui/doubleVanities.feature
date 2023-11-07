@@ -1,6 +1,6 @@
 Feature: Double Vanities
 
-    Background: User is on the home page
+       Background: User is on the home page
         Given User navigates to Home Page
     Scenario:
         When User clicks to Double Bathroom Vanities
@@ -33,6 +33,7 @@ Examples:
   | Matte Cashmere |
   | High Gloss Anthracite|
 
+
 Scenario:Add Double Bathroom Vanities to the shopping cart
         Given User clicks to Double Bathroom Vanities
         Then User clicks on random Add to Cart
@@ -45,3 +46,4 @@ Scenario: Subscribe Our Email
     Then I enter a valid email address
     And I click the subscribe button
    
+

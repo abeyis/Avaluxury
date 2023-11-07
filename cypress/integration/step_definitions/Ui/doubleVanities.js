@@ -9,13 +9,28 @@ before(() => {
     DoubleVanitiesPage = new doubleVanitiesPage();
     HomePage = new homePage();
 });
-When('User clicks to Double Bathroom Vanities', () => {
+
+Given('User clicks to Double Bathroom Vanities', () => {
+
     HomePage.clickDoubleVanities();
 });
 
 When('I should see all links are working', () => {
     cy.checkBrokenLinks();
+ });
+ When('I visit the color selector page', () => {
+  DoubleVanitiesPage.visitColorSelectorPage();
+ });
+
+ When('I select a color option {string}', (selectedColor) => {
+  DoubleVanitiesPage.selectColorOption(selectedColor);
 });
+
+  
+  Then('I should see that the selected color {string} is checked', (selectedColor) => {
+    DoubleVanitiesPage.checkSelectedColorIsChecked(selectedColor);
+  });
+
 
 
  When('I locate the email subscription box at the bottom of the website', () => {
@@ -30,4 +45,5 @@ When('I should see all links are working', () => {
   And('I click the subscribe button', () => {
     DoubleVanitiesPage.clickSubscribeButton();
   });
+
 
