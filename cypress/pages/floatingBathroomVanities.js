@@ -197,7 +197,7 @@ export class floatingBathroomVanities {
       return cy
         .get(this.floatingVanitiesSelectors.sizeTable)
         .eq(randomNum)
-        .click({ force: true });
+        .click();
     });
   }
 }
