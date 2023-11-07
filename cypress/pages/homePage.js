@@ -1,5 +1,4 @@
 
-
 export class homePage{
     
     homePageSelectors={
@@ -41,7 +40,6 @@ export class homePage{
 
    chooseSize(size) {
     cy.get('#HeaderMenu-sizes-' + size + '-inch').click();
-    cy.wait(1000);
   }
 
    clickSingleVanities(){
@@ -51,6 +49,7 @@ export class homePage{
   clickDoubleVanities(){
     cy.get(this.homePageSelectors.doubleVanities).click();
    }
-    
+
+   
  }
 
