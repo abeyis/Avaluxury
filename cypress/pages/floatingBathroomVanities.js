@@ -7,7 +7,27 @@ export class floatingBathroomVanities {
     searchBox: "input[class='gf-controls-search-input']",
     productTitle: "div[class='h4 spf-product-card__title']",
     cartCount: "div.cart-count-bubble span[aria-hidden='true']",
-    noSuchProduct: "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
+    noSuchProduct:
+      "div[class='spf-col-xl-12 spf-col-lg-12 spf-col-md-12 spf-col-sm-12']",
+    colorButton: "div.gf-option-98948 > div.gf-block-title span",
+    colorTable: "button[data-fid='98948']",
+    selectedProduct: "#gf-tree strong > span",
+    sizeButton: "div.gf-option-98949 > div.gf-block-title span",
+    sizeTable: "li[class='gf-box-rectangle']",
+  };
+
+  productDetailsSelectors = {
+    title: "div[class='product__title']",
+    color: "h2[class='cbb-also-bought-title']",
+    price: "span[class='price-item price-item--regular']",
+    quantity: "input[class='quantity__input']",
+    addToCart: "button[name='add']",
+    description:
+      "div[class='smart-tabs-navigation-li smart-tabs-navigation-li-active']",
+    shippingAndReturn: "div.smart-tabs-navigation-wrapper div:nth-of-type(2)",
+    review: "div.smart-tabs-navigation-wrapper div:nth-of-type(3)",
+    viewStoreInformation: "#ShowPickupAvailabilityDrawer",
+    buyWithShopPay: "div[data-testid='ShopifyPay-button']",
   };
 
   clickAddToCartButton() {
@@ -31,14 +51,12 @@ export class floatingBathroomVanities {
   }
 
   getCartCount() {
-    return (
-      cy
-        .get(this.floatingVanitiesSelectors.cartCount)
-        .invoke("text")
-        .then((text) => {
-          return parseInt(text);
-        })
-    );
+    return cy
+      .get(this.floatingVanitiesSelectors.cartCount)
+      .invoke("text")
+      .then((text) => {
+        return parseInt(text);
+      });
   }
 
   clickAddToCartButtonWithIndex(index) {
@@ -68,16 +86,118 @@ export class floatingBathroomVanities {
       .then((text) => {
         return text;
       });
-  };
+  }
 
   verfyNoSuchProduct() {
-   return cy.get(this.floatingVanitiesSelectors.noSuchProduct)
+    return cy
+      .get(this.floatingVanitiesSelectors.noSuchProduct)
       .invoke("text")
       .then((text) => {
         return text;
       });
   }
 
+  clickAProductRandomly() {
+    return cy
+      .get(this.floatingVanitiesSelectors.productTitle)
+      .then(($products) => {
+        let numbersOfProducts = $products.length;
 
+        function getRandomNumber() {
+          return Math.floor(Math.random() * numbersOfProducts);
+        }
+        const randomNum = getRandomNumber();
+        console.log(randomNum);
+        cy.get(this.floatingVanitiesSelectors.productTitle)
+          .eq(randomNum)
+          .click();
+      });
+  }
 
+  verifyProductDetailsAreVisibleAndClickable() {
+    cy.get(this.productDetailsSelectors.addToCart)
+      .scrollIntoView()
+      .should("be.visible")
+      .and("be.enabled");
+
+    cy.get(this.productDetailsSelectors.color)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.description)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.quantity)
+      .scrollIntoView()
+      .should("be.visible")
+      .and("be.enabled");
+    cy.get(this.productDetailsSelectors.review)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.price)
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get(this.productDetailsSelectors.shippingAndReturn)
+      .scrollIntoView()
+      .should("be.visible");
+    cy.get(this.productDetailsSelectors.title)
+      .scrollIntoView()
+      .should("be.visible");
+    cy.get(this.productDetailsSelectors.viewStoreInformation)
+      .scrollIntoView()
+      .should("be.visible")
+      .and("be.enabled");
+  }
+
+  SelectAColorRandomly() {
+    return cy.get(this.floatingVanitiesSelectors.colorTable).then(($colar) => {
+      let numbersOfColor = $colar.length;
+
+      function getRandomNumber() {
+        return Math.floor(Math.random() * numbersOfColor);
+      }
+      const randomNum = getRandomNumber();
+      console.log(randomNum);
+      return cy
+        .get(this.floatingVanitiesSelectors.colorTable)
+        .eq(randomNum)
+        .click({force: true});
+    });
+  }
+
+  clickColorButton() {
+    cy.get(this.floatingVanitiesSelectors.colorButton).click();
+  }
+
+  getSelectedProduct() {
+    return cy
+      .get(this.floatingVanitiesSelectors.selectedProduct)
+      .invoke("text")
+      .then((text) => {
+        return text;
+      });
+  }
+
+  clickColorButton() {
+    cy.get(this.floatingVanitiesSelectors.sizeButton).click();
+  }
+
+  selectASizeRandomly() {
+    return cy.get(this.floatingVanitiesSelectors.sizeTable).then(($size) => {
+      let numbersOfSize = $size.length;
+
+      function getRandomNumber() {
+        return Math.floor(Math.random() * numbersOfSize);
+      }
+      const randomNum = getRandomNumber();
+      console.log(randomNum);
+      return cy
+        .get(this.floatingVanitiesSelectors.sizeTable)
+        .eq(randomNum)
+        .click();
+    });
+  }
 }
