@@ -82,23 +82,21 @@ before(()=>{
     
     function checkProduct(singleKeyword) {
       
-      cy.get('.h4.spf-product-card__title').each(($productTitle) => {
+      cy.get(singleVanitiesPage.productTitle).each(($productTitle) => {
         const titleText = $productTitle.text();
       
-        if (titleText.includes('Single')) {
-          cy.log('Test is passed');
+        if (titleText.should('contain','Single')) {
       
         } else {
           cy.wrap($productTitle).click();
       
-          cy.get('p[data-mce-fragment="1"]').each(($productDescription) => {
+          cy.get(singleVanitiesPage.$productDescription).each(($productDescription) => {
             const descriptionText = $productDescription.text();
       
-            if (descriptionText.includes('Single')) {
-              cy.log('Test is passed');
+            if (descriptionText.should('contain','Single')) {
             } else {
-              cy.log('Test is failed, there is a bug');
             }
+
           });
       
           cy.go('back');
