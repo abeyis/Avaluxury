@@ -36,9 +36,9 @@ Feature: Single Vanities Button Functionality
     Scenario: Add to Cart Button & Your Cart page functionality test
         When User clicks to Single Vanities
         And User clicks to random add-to-cart button 
-        And it should direct to Your Cart page
+        Then User verifies the page title is "Your Shopping Cart"
         And the added product should appear in Your Cart page
         And user clicks to Check-Out Button
-        Then it should direct to the Payment
+        Then User verifies the page title is "Checkout - Avaluxury"
 
 

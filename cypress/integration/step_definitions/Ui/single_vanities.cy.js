@@ -133,11 +133,6 @@ And ('User clicks to random add-to-cart button' , () =>{
     singleVanitiesPage.addToCartRandomProduct() 
 })
 
-And('it should direct to Your Cart page', () => {
-
-    const expectedTitle = 'Your Shopping Cart'; 
-    cy.title().should('contain', expectedTitle);
-  }); 
 
 And ('the added product should appear in Your Cart page' , () => {  
    
@@ -149,7 +144,4 @@ And ('user clicks to Check-Out Button' , () => {
     singleVanitiesPage.clickCheckOutButton()
 })
 
-Then ('it should direct to the Payment' , () => {
-    const expectedTitle = 'Paiement'; 
-    cy.title().should('contain', expectedTitle);
-})
+
