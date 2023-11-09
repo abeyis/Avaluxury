@@ -9,25 +9,6 @@ Given User navigates to Home Page
     When User clicks to size tab 
     And User chooses "<size>" from list
     Then User verifies the result page cantains only items with "<size>"
-
-    Examples:
-    | size| 
-    | 18  | 
-    | 24  | 
-    | 30  |
-    | 32  | 
-    | 36  | 
-    | 40  |
-    | 48  | 
-    | 60  | 
-    | 67  | 
-    | 72  |
-
-
- 
-    Scenario Outline: Size Navigation Check
-    When User clicks to size tab 
-    And User chooses "<size>" from list
     Then User verifies the result page url contains "<size>"
 
     Examples:
@@ -42,3 +23,4 @@ Given User navigates to Home Page
     | 60  | 
     | 67  | 
     | 72  |
+
