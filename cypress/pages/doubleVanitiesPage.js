@@ -1,4 +1,5 @@
 
+
 export class doubleVanitiesPage{
 
 
@@ -6,7 +7,6 @@ export class doubleVanitiesPage{
         searchField:'input.gf-controls-search-input',
 
     }
-  
 
     visitColorSelectorPage() {
     cy.get('span:contains("Color")').each(($el) => {
@@ -54,5 +54,4 @@ clickSubscribeButton() {
  locateEmailSubscriptionBox() {
   this.getEmailInput().scrollIntoView().should('be.visible');
 }
-
 }

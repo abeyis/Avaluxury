@@ -51,8 +51,8 @@ Scenario Outline: Perform a search with different terms
       | High Gloss White      |
       | Matte Cashmere        |
       | High Gloss Anthracite |
-
-
+     
+  
   Scenario:Add Double Bathroom Vanities to the shopping cart
     Given User clicks to Double Bathroom Vanities
     Then User clicks on random Add to Cart
@@ -66,7 +66,7 @@ Scenario Outline: Perform a search with different terms
     Then I enter a valid email address '<email>'
     And I click the subscribe button
 
-    Examples:
+  Examples:
       | email                 |
       | selma.berg@abeyis.com |
 
