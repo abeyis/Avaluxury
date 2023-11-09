@@ -2,9 +2,11 @@
 Feature: Size 
 
 
-Background: User is on the home page
-Given User navigates to Home Page
+    Background: User is on the home page
+        Given User navigates to Home Page
 
+
+    @cloud
     Scenario Outline: Size Tab
     When User clicks to size tab 
     And User chooses "<size>" from list
@@ -23,4 +25,3 @@ Given User navigates to Home Page
     | 60  | 
     | 67  | 
     | 72  |
-
