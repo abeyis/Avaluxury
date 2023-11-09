@@ -6,6 +6,8 @@ Feature: Design Services
     Scenario: 
     When User clicks to Design Services
     Then User verifies the page title is 'Design Services'
+        
+    @smoke
     Scenario: Design Services Tab
         When User clicks to Design Services
         Then User verifies the page title is 'Design Services'
@@ -15,7 +17,7 @@ Feature: Design Services
         And User clicks to View All Our Recent Products
         Then User verifies the page title is 'Shop All'
 
-            """
+            
     Scenario: Lets Work Together Section
         When User clicks to Design Services
         And User fills all necassary fields

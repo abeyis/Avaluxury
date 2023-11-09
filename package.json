@@ -4,13 +4,14 @@
   "description": "Avaluxury Cypress UA Automation",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --env TAGS='@cloud' --record --key cc24700e-4019-4a08-a0e6-9b3d6d7a5a42"
+    "test": "npx cypress run --env TAGS='@smoke' --record --key cc24700e-4019-4a08-a0e6-9b3d6d7a5a42",
+    "local": "npx cypress run --env TAGS='@smoke'"
    },
   "author": "Abeyis Group 8",
   "license": "ISC",
   "devDependencies": {
     "cucumber": "^6.0.7",
-    "cypress": "^13.3.1",
+    "cypress": "^13.4.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-localstorage-commands": "^2.2.4",
     "install": "^0.13.0"
