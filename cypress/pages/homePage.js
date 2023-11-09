@@ -18,7 +18,8 @@ export class homePage {
 
   clickDesignServices() {
     cy.get(this.homePageSelectors.designServices).click();
-  }
+
+   }
 
   clickContact() {
     cy.get(this.homePageSelectors.contact).click();
@@ -48,4 +49,8 @@ export class homePage {
   clickShopAll() {
     cy.get(this.homePageSelectors.shopAll).click();
   }
+  clickFreestanding(){
+    cy.get(this.homePageSelectors.style).click();
+    cy.get(this.homePageSelectors.freeStandingVanities).click();
+   }
 }
