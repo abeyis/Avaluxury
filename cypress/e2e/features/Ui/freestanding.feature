@@ -5,15 +5,15 @@ Feature: Freestanding
 
     @smoke
     Scenario:
-        When User clicks to Double Bathroom Vanities
+        When User clicks to Freestanding Bathroom Vanities
         Then User verifies the page title is 'Freestanding Bathroom Vanities'
 
     Scenario: color check
-        When user goes to freestanding vanities page
+        When User clicks to Freestanding Bathroom Vanities
         And user picks "Beechwood" as color
         Then user should see only "Beechwood" products
 
     Scenario: user size control
-        When the user clicks on the size
-        And the user must see "18 Inch" all dimensions
-        Then the user should be "18 Inch" able to select the size
+        When User clicks to Freestanding Bathroom Vanities
+        Then the user must see "18 Inch" all dimensions
+        And the user should be "18 Inch" able to select the size
