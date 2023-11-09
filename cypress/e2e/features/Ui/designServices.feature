@@ -3,7 +3,8 @@ Feature: Design Services
 
     Background: User is on the home page
         Given User navigates to Home Page
-
+        
+    @smoke
     Scenario: Design Services Tab
         When User clicks to Design Services
         Then User verifies the page title is 'Design Services'
