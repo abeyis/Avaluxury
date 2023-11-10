@@ -3,7 +3,8 @@ Feature: Contact
 
     Background: User is on the home page
         Given User navigates to Home Page
-
+    
+    @smoke
     Scenario: Contact Tab
         When User clicks to Contact
         Then User verifies the page title is 'Contact'

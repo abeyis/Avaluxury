@@ -2,17 +2,16 @@
 export class SingleVanitiesPage{
     
     singleVanitiesSelectors={
-            colorButton:"span:contains('Color')" ,
-                greenColour:"span.gf-option-one-color[style='background-color:rgba(147, 168, 52, 1)']" ,
-                blackColour: "span.gf-option-one-color[style='background-color:rgba(0, 0, 0, 1)']",
-            sizeButton: "span:contains('Size')",
-            collectionButton: "span:contains('Collection')",
-            priceButton: "span:contains('Price')",
+            colorButton:"div.h3>span:contains('Color')" ,
+            sizeButton: "div.h3>span:contains('Size')",
+            collectionButton: "div.h3>span:contains('Collection')",
+                singleBathroomVanitiesCollection: 'button[role="checkbox"][aria-checked="true"][data-fid="98973"][data-fvalue="461776847121"][title="Single Bathroom Vanities"]', 
+            priceButton: "div.h3>span:contains('Price')",
 
-    }
-
-
-
+            productTitle: ".h4.spf-product-card__title",
+            productDescription: 'p[data-mce-fragment="1"]'
+        }
+   
 
     clickColorButton(){
         cy.get(this.singleVanitiesSelectors.colorButton).click()
@@ -23,40 +22,12 @@ export class SingleVanitiesPage{
        }
 
     clickCollectionButton(){
-        cy.get(this.singleVanitiesSelectors.collectionButton).click()
+        cy.get(this.singleVanitiesSelectors.collectionButton).click().click()
     }
 
     clickPriceButton(){
         cy.get(this.singleVanitiesSelectors.priceButton).click()
     }
-
-    clickGreenColour(){
-        cy.get(this.singleVanitiesSelectors.greenColour).click()
-    }
-
-    clickBlackColour(){
-        cy.get(this.singleVanitiesSelectors.blackColour).click()
-    }
-
-
-
-
-
-
-
-
-    
-    clickSearchBox_and_typeSearchWord (search_word) {
-        cy.get('input.gf-controls-search-input[name="q"][placeholder="Search products"]')
-          .click()
-          .type(search_word + '{enter}');
-    };
-      
-
-    getProductsInThePage(){
-     return cy.get('.spf-product-card__title')
- }
-
 
 }
 

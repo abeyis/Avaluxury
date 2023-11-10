@@ -9,13 +9,13 @@ Feature: Floating Bathroom Page
     When User clicks to the Add to Cart button
     Then User should be able to verify that the product is added to the shopping cart
 
-  @cloud
+
   Scenario: Remove product/products from shopping cart
     When User clicks to the Add to Cart button
     And User clicks the delete icon
     Then The item should be deleted from the shopping cart
 
-  @cloud
+
   Scenario: User searchs some products using Search box
     When Verify it is visible and clickable
     And User clicks search box

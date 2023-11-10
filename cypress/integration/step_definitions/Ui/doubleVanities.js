@@ -33,17 +33,30 @@ When('I should see all links are working', () => {
 
 
 
+  When('I visit the color selector page', () => {
+    DoubleVanitiesPage.visitColorSelectorPage();
+   });
+  
+   When('I select a color option {string}', (selectedColor) => {
+    DoubleVanitiesPage.selectColorOption(selectedColor);
+  });
+  
+    
+    Then('I should see that the selected color {string} is checked', (selectedColor) => {
+      DoubleVanitiesPage.checkSelectedColorIsChecked(selectedColor);
+    });
+
+
  When('I locate the email subscription box at the bottom of the website', () => {
   DoubleVanitiesPage.locateEmailSubscriptionBox();
   });
   
-  Then('I enter a valid email address', () => {
-    const validEmail = 'selma.berg@abeyis.com';
-    DoubleVanitiesPage.enterValidEmail(validEmail);
-  });
+  When('I enter a valid email address {string}', (email) => {
+    DoubleVanitiesPage.enterValidEmail(email);
+});
+
   
   And('I click the subscribe button', () => {
     DoubleVanitiesPage.clickSubscribeButton();
   });
-
 
