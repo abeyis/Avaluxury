@@ -3,7 +3,7 @@
 
 import { Given, When } from "cypress-cucumber-preprocessor/steps";
 import { homePage } from "../../../pages/homePage";
-import { SingleVanitiesPage } from "../../../pages/single_vanities_page";
+import { SingeVanitiesPage } from "../../../pages/single_vanities_page";
 
 
 let HomePage=null
@@ -15,21 +15,6 @@ When('User clicks to Single Vanities', () => {
     HomePage.clickSingleVanities();
 });
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
