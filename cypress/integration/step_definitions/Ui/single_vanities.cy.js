@@ -1,5 +1,6 @@
-// Feature: Single Vanities Button Functionality
 
+
+// Feature: Single Vanities Button Functionality
 
 import { Given, When } from "cypress-cucumber-preprocessor/steps";
 import { homePage } from "../../../pages/homePage";
@@ -15,96 +16,6 @@ When('User clicks to Single Vanities', () => {
     HomePage.clickSingleVanities();
 });
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Scenario: Add to Cart Button & Your Cart page functionality test
