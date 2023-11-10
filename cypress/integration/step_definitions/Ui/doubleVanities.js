@@ -36,7 +36,6 @@ When("I enter {string} into the search box", (searchTerm) => {
   DoubleVanitiesPage.selectColorOption(selectedColor);
 });
 
-  
   Then('I should see that the selected color {string} is checked', (selectedColor) => {
     DoubleVanitiesPage.checkSelectedColorIsChecked(selectedColor);
   });
@@ -61,7 +60,7 @@ When("I enter {string} into the search box", (searchTerm) => {
     DoubleVanitiesPage.enterValidEmail(email);
 });
 
-  
+
   And('I click the subscribe button', () => {
     DoubleVanitiesPage.clickSubscribeButton();
   });
