@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:20.9.0'
-    }
-  }
+   agent any
     stages {
         stage('Checkout') {
             steps {
