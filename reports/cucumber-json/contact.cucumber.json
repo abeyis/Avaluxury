@@ -1,0 +1,108 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Contact",
+    "line": 2,
+    "id": "contact",
+    "tags": [],
+    "uri": "contact.feature",
+    "elements": [
+      {
+        "id": "contact;contact-tab",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Contact Tab",
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 7
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 5598000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "User clicks to Contact",
+            "result": {
+              "status": "passed",
+              "duration": 1301000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "User verifies the page title is 'Contact'",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contact;send-message",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Send Message",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "User clicks to Contact",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "User fills mecassary information",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [
+              {
+                "content": "Scenario: Subscribe Our Email\nWhen User clicks to Contact\nAnd User enters valid email address\nThen User verifies the success message",
+                "line": 17
+              }
+            ],
+            "keyword": "And ",
+            "line": 15,
+            "name": "User clicks send button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

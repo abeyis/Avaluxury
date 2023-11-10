@@ -21,3 +21,6 @@ Then("User verifies the result page cantains only items with {string}", (size) =
     SizePage.verifyResultPageContainsSize(size);
   });
 
+Then('User verifies the result page url contains {string}',(size)=>{
+SizePage.verifyResultPageContainsSize(size);
+})

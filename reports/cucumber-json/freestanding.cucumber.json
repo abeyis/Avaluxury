@@ -1,0 +1,154 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Freestanding",
+    "line": 1,
+    "id": "freestanding",
+    "tags": [],
+    "uri": "freestanding.feature",
+    "elements": [
+      {
+        "id": "freestanding;",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "",
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 6
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 4959000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "User clicks to Freestanding Bathroom Vanities",
+            "result": {
+              "status": "passed",
+              "duration": 2801000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "User verifies the page title is 'Freestanding Bathroom Vanities'",
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "freestanding;color-check",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "color check",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "User clicks to Freestanding Bathroom Vanities",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "user picks \"Beechwood\" as color",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "user should see only \"Beechwood\" products",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "freestanding;user-size-control",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "user size control",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "User clicks to Freestanding Bathroom Vanities",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "the user must see \"18 Inch\" all dimensions",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [
+              {
+                "content": "Scenario: product search box control\nWhen the user clicks on the search box\nAnd the user chooses \"Gray Selena\" the product\nThen the user should only see the selected \"Gray Selena\" product\n\nScenario: controlling the number of shows\nWhen the user clicks on the introduction box\nThen the user should see \"32\" product numbers\nThen the user must be able to select \"32\" the number of shows\n\nScenario Outline:\nWhen the user clicks on the \"<sort>\" box\nAnd all the sort variants of the user must be seen\nThen the user should be able to select the desired sort list\nExamples:\n| sort                |\n| Relevance           |\n| Availability        |\n| Best Selling        |\n| Alphabetically, A-Z |\n| Alphabetically, Z-A |\n| Price, low to high  |\n| Price, high to low  |\n| Date, new to old    |\n| Date, old to new    |\n| Sale off            |\n\nScenario: checking the listed product list\nWhen the user sees the details of each product listed with pictures\nAnd the user should be able to click on the products\nThen the user should be redirected to the detail page of the product\n\nScenario: checking the add to cart box\nWhen the user clicks the add to cart box\nAnd the user should be able to see the products added to the cart\nThen the user should be able to continue shopping if they want",
+                "line": 21
+              }
+            ],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the user should be \"18 Inch\" able to select the size",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
