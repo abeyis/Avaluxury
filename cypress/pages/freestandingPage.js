@@ -128,3 +128,42 @@ export class freestandingPage {
     cy.get(this.freestandingPageSelectors.maxPriceInput).type(maxPrice);
   }
 }
+/*   
+        pickSearchProducts(search)
+        cy.get(this.freestandingPageSelectors.search).click()
+        
+         
+        pickSearchProducts(search); {
+            cy.get(this.freestandingPageSelectors.searchProducts).type(search);
+            cy.get(this.freestandingPageSelectors.searchProducts).submit();
+          }
+        
+          verifySearchProducts(search); {
+            cy.get(this.freestandingPageSelectors.graySelena).each(($item) => {
+              cy.get($item).invoke('text').then((text) => {
+                cy.log(text);
+                switch (search) {
+                  case "Gray Selena":
+                    expect(text).to.include("Gray Selena");
+                    break;
+                  case "Double Sink":
+                    expect(text).to.include("Double Sink");
+                    break;
+                  // Diğer terimler için de aynı şekilde case'ler ekleyebilirsiniz
+                  default:
+                    throw new Error("There is no such size");
+                }
+              });
+            });
+          }
+          
+
+        verifySearchProducts(search);{
+            cy.get(this.freestandingPageSelectors.productTitle).each((item)=>{
+                cy.log(item)
+                expect(item).to.contain(search);
+                cy.wait(600)
+            })
+        }
+        
+    */
