@@ -46,6 +46,5 @@ export class SingleVanitiesPage{
     selectSize(selected_size) {
         cy.get(`button[data-fid="98949"][title="${selected_size}"]`).click();
     }
-
 }
 
