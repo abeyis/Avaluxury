@@ -24,7 +24,7 @@ export class doubleVanitiesPage{
         cy.get(`button[title="${selectedColor}"]`).should('have.attr', 'aria-checked', 'true');
       }
 
-addToCart() {
+addToCarts() {
     cy.get("span")
       .filter(':contains("Add to cart")')
       .then(($elements) => {

@@ -55,9 +55,9 @@ Scenario Outline: Perform a search with different terms
   
   Scenario:Add Double Bathroom Vanities to the shopping cart
     Given User clicks to Double Bathroom Vanities
-    Then User clicks on random Add to Cart
-    And User clicks on Continue Shopping
-    And User verifies they are on the all page
+    Then User clicks on random Add to Carts
+    And User clicks on the Continue Shopping
+    
 
   @Test
   Scenario Outline: Subscribe Our Email

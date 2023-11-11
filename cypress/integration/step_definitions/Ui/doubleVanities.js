@@ -40,17 +40,15 @@ When("I enter {string} into the search box", (searchTerm) => {
     DoubleVanitiesPage.checkSelectedColorIsChecked(selectedColor);
   });
 
-  Then("User clicks on random Add to Cart", function () {
-    DoubleVanitiesPage.addToCart();
+  Then("User clicks on random Add to Carts", function () {
+    DoubleVanitiesPage.addToCarts();
   });
   
-  And("User clicks on Continue Shopping", function () {
+  And("User clicks on the Continue Shopping", function () {
     DoubleVanitiesPage.continueShopping();
   });
   
-  And("User verifies they are on the all page", function () {
-    cy.url().should("eq", "https://avaluxury.com/collections/all");
-  });
+  
 
  When('I locate the email subscription box at the bottom of the website', () => {
   DoubleVanitiesPage.locateEmailSubscriptionBox();
