@@ -17,7 +17,17 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'npm run TestWithReportGeneration'
+               script {
+                    // Start Xvfb
+                    sh 'Xvfb :99 -ac &'
+                    
+                    // Set DISPLAY environment variable
+                    env.DISPLAY = ':99'
+                    
+                    // Run Cypress tests
+                    sh 'npm run local && npm run cucumber-report'
+                }
+                
             }
         }
     }
