@@ -17,11 +17,11 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                script {
-                    // Install required dependencies
-                    sh 'yum update -y'
-                    sh 'yum install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb'
-                }
-               sh 'npm install' 
+                    // Update and install required dependencies using yum
+                    sh 'sudo yum update -y'
+                    sh 'sudo yum install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb'
+                  sh 'npm install' 
+               }
                }
             }
         
@@ -30,7 +30,7 @@ pipeline {
               script {
                     sh 'Xvfb :99 -ac &'  // Start Xvfb
                     sh 'export DISPLAY=:99'  // Set DISPLAY environment variable
-                    sh 'npm run local && npm run cucumber-report'  // Run Cypress tests
+                    sh 'xvfb-run npx cypress run --env TAGS=\'@smoke\''
                 }
                 
             }
