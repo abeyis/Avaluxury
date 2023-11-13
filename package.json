@@ -9,7 +9,7 @@
     "cucumber-report": "node cucumber-html-reporter.js",
     "delete-existingJsonReports": "Remove-Item -Path ./reports/cucumber-json/*.json -Recurse -Force",
     "delete-reportFolder": "rmdir /S /Q reports",
-    "TestWithReportGeneration": "npm run delete-reportFolder && npm run local && npm run cucumber-report && npm run delete-existingJsonReports"
+    "TestWithReportGeneration": "npm run local && npm run cucumber-report"
   },
   "author": "Abeyis Group 8",
   "license": "ISC",
