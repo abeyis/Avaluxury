@@ -9,7 +9,8 @@
     "cucumber-report": "node cucumber-html-reporter.js",
     "delete-existingJsonReports": "Remove-Item -Path ./reports/cucumber-json/*.json -Recurse -Force",
     "delete-reportFolder": "rmdir /S /Q reports",
-    "TestWithReportGeneration": "npm run local && npm run cucumber-report"
+    "TestWithReportGeneration": "npm run local && npm run cucumber-report",
+    "cy:run:ci": "docker run -e CYPRESS_baseUrl=http://54.80.124.225:8080 -v $PWD:/e2e -w /e2e --entrypoint=cypress cypress/included:8.5.0 run"
   },
   "author": "Abeyis Group 8",
   "license": "ISC",
