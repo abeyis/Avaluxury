@@ -16,7 +16,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+               script {
+                    // Install required dependencies
+                    sh 'apt-get update -y'
+                    sh 'apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb'
+               sh 'npm install' 
+               }
             }
         }
         stage('Run Tests') {
