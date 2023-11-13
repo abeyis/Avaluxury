@@ -17,7 +17,7 @@ pipeline {
         stage('Install Dependencies') {
     steps {
         script {
-            sh 'sudo apt-get install libatk1.0-0'
+            sh 'apt-get install libatk1.0-0'
         }
     }
 }
