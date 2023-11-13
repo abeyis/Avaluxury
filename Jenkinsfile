@@ -4,9 +4,9 @@ pipeline {
     tools {
         nodejs 'NodeJS'
     }
-    environment {
+     environment {
         DISPLAY = ':99'
-        PATH = "/usr/local/bin:$PATH"  // Add the path to the location of the installed libraries
+        LD_LIBRARY_PATH = '/path/to/directory/containing/libatk:' + env.LD_LIBRARY_PATH
     }
     stages {
         stage('Checkout') {
