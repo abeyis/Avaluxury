@@ -18,8 +18,8 @@ pipeline {
        stage('Install Xvfb') {
     steps {
         script {
-            sh 'apt-get update -y'  // Update package list (for Debian/Ubuntu)
-            sh 'apt-get install -y xvfb'  // Install Xvfb
+            sh 'sudo yum update -y'
+            sh 'sudo yum install -y Xvfb'
         }
     }
 }
