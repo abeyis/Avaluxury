@@ -2,7 +2,7 @@ pipeline {
    agent any
 
     tools {
-        nodejs 'NodeJS'
+        nodejs 'Built-In Node'
     }
     stages {
         stage('Checkout') {
