@@ -1,8 +1,12 @@
 
 
+export class doubleVanitiesPage{
 
-export class doubleVanitiesPage {
-  
+
+    doubleVanitiesPageSelectors={
+        searchField:'input.gf-controls-search-input',
+
+    }
 
     visitColorSelectorPage() {
     cy.get('span:contains("Color")').each(($el) => {
@@ -20,7 +24,7 @@ export class doubleVanitiesPage {
         cy.get(`button[title="${selectedColor}"]`).should('have.attr', 'aria-checked', 'true');
       }
 
-addToCart() {
+addToCarts() {
     cy.get("span")
       .filter(':contains("Add to cart")')
       .then(($elements) => {
@@ -50,5 +54,4 @@ clickSubscribeButton() {
  locateEmailSubscriptionBox() {
   this.getEmailInput().scrollIntoView().should('be.visible');
 }
-
 }

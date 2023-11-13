@@ -48,3 +48,21 @@ Cypress.on('uncaught:exception', (err, runnable) => {
      }
     });
   });
+  Cypress.Commands.add("typeAndEnter", (selector, text) => {
+    cy.get(selector).should('be.visible').type(text);
+    cy.get(selector).type('{enter}');
+    
+  });
+
+  Cypress.Commands.add('verifySearchResults', (searchTerm) => {
+   cy.get('#gf-products .spf-product-card__inner').each((productCard) => {
+    const productTitle = productCard.find('a').attr('title');
+  
+    console.log(`Product Title: ${productTitle}`);
+    if (productTitle.includes(searchTerm)) {
+      cy.log(`Matching product found: ${productTitle}`);
+    } else {
+      cy.log(`Unexpected product found: ${productTitle}`);
+    }
+  });
+});
