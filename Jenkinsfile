@@ -17,7 +17,15 @@ pipeline {
         stage('Install Dependencies') {
     steps {
         script {
-            sh 'apt-get install libatk1.0-0'
+           if command -v apt-get &> /dev/null; then
+    sudo apt-get install libatk1.0-0
+elif command -v yum &> /dev/null; then
+    sudo yum install atk
+else
+    echo "Unsupported package manager"
+    exit 1
+fi
+
         }
     }
 }
