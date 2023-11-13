@@ -4,10 +4,11 @@ pipeline {
     tools {
         nodejs 'NodeJS'
     }
-     environment {
+    environment {
         DISPLAY = ':99'
-        LD_LIBRARY_PATH = '/path/to/directory/containing/libatk:' + 'env.LD_LIBRARY_PATH'
+        PATH = "/usr/local/bin:$PATH"  // Add the path to the location of the installed libraries
     }
+
     stages {
         stage('Checkout') {
             steps {
@@ -17,12 +18,11 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                steps {
-                  script {
-                    // Install required dependencies
-                     sh 'sudo yum update -y'
-                    sh 'sudo yum install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb'
-                 sh 'npm install'
-                  }
+                   script {
+                    sh 'Xvfb :99 -ac &'  // Start Xvfb
+                    sh 'export DISPLAY=:99'  // Set DISPLAY environment variable
+                    sh 'npm run local && npm run cucumber-report'  // Run Cypress tests
+                }
               
             }
                }
