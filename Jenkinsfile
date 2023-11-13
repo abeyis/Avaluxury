@@ -21,8 +21,9 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'xvfb-run npx cypress run --env TAGS=@smoke'
-                }
+            sh 'export PATH=$PATH:/path/to/directory/containing/xvfb-run'  // Add the directory to the PATH
+            sh 'xvfb-run npx cypress run --env TAGS=@smoke'
+        }
             }
         }
     }
