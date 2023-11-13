@@ -4,6 +4,10 @@ pipeline {
     tools {
         nodejs 'NodeJS'
     }
+    environment {
+        DISPLAY = ':99'
+        PATH = "/usr/local/bin:$PATH"  // Add the path to the location of the installed libraries
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -18,14 +22,9 @@ pipeline {
         stage('Run Tests') {
             steps {
                script {
-                    // Start Xvfb
-                    sh 'Xvfb :99 -ac &'
-                    
-                    // Set DISPLAY environment variable
-                    env.DISPLAY = ':99'
-                    
-                    // Run Cypress tests
-                    sh 'npm run local && npm run cucumber-report'
+                    sh 'Xvfb :99 -ac &'  // Start Xvfb
+                    sh 'export DISPLAY=:99'  // Set DISPLAY environment variable
+                    sh 'npm run local && npm run cucumber-report'  // Run Cypress tests
                 }
                 
             }
