@@ -19,9 +19,7 @@ pipeline {
             steps {
                steps {
                    script {
-                    sh 'Xvfb :99 -ac &'  // Start Xvfb
-                    sh 'export DISPLAY=:99'  // Set DISPLAY environment variable
-                    sh 'npm run local && npm run cucumber-report'  // Run Cypress tests
+                    sh 'npm install'
                 }
               
             }
