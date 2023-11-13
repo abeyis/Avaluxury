@@ -17,15 +17,7 @@ pipeline {
             }
         }
 
-        stage('Install Xvfb') {
-            steps {
-                script {
-                    sh 'sudo yum update -y'
-                    sh 'echo "jenkins ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/jenkins'
-                    sh 'sudo yum install -y Xvfb'
-                }
-            }
-        }
+    
 
         stage('Start Xvfb') {
             steps {
