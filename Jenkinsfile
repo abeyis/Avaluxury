@@ -14,6 +14,13 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Install Dependencies') {
+    steps {
+        script {
+            sh 'sudo apt-get install libatk1.0-0'
+        }
+    }
+}
         stage('Run Tests') {
             steps {
                 script {
