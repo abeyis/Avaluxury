@@ -17,16 +17,6 @@ pipeline {
             }
         }
 
-    
-
-        stage('Start Xvfb') {
-            steps {
-                script {
-                    sh 'Xvfb :99 -ac'
-                    sh 'export DISPLAY=:99'
-                }
-            }
-        }
 
         stage('Run Tests') {
             steps {
