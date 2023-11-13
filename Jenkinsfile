@@ -5,9 +5,10 @@ pipeline {
         nodejs 'NodeJS'
     }
 
-    environment {
+   environment {
         DISPLAY = ':99'
-        LD_LIBRARY_PATH = "/path/to/directory/containing/libatk:${env.LD_LIBRARY_PATH}"
+        LD_LIBRARY_PATH = '/path/to/directory/containing/libatk:' + 'env.LD_LIBRARY_PATH'
+        PATH = "/path/to/directory/containing/xvfb-run:$PATH"
     }
 
     stages {
