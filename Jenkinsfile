@@ -27,9 +27,10 @@ pipeline {
         
         stage('Run Tests') {
             steps {
-               script {
-                    sh 'export LD_LIBRARY_PATH=/path/to/directory/containing/libatk:$LD_LIBRARY_PATH'
-                    sh 'npx cypress run --env TAGS=\'@smoke\''
+              script {
+                    sh 'Xvfb :99 -ac &'  // Start Xvfb
+                    sh 'export DISPLAY=:99'  // Set DISPLAY environment variable
+                    sh 'npm run local && npm run cucumber-report'  // Run Cypress tests
                 }
                 
             }
