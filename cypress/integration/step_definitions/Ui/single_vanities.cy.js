@@ -18,13 +18,13 @@ When('User clicks to Single Vanities', () => {
    
 
 
-//Scenario: Add to Cart Button & Your Cart page functionality test
-
 let singleVanitiesPage=null
 before(()=>{
     singleVanitiesPage =new SingleVanitiesPage();
 })
 
+
+//Color filter test
 
   And ('User clicks the Color Filter Button', () => {
     singleVanitiesPage.clickColorButton();
@@ -108,7 +108,7 @@ before(()=>{
   }
 });
 
-// 
+
 
 
 
