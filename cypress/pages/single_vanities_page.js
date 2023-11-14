@@ -29,23 +29,8 @@ export class SingleVanitiesPage{
         cy.get(this.singleVanitiesSelectors.priceButton).click()
     }
 
-    
-    clickSingleBathroomVanitiesCollection() {
-        cy.get (this.singleVanitiesSelectors.singleBathroomVanitiesCollection).click()
-    }
-
-    
-    selectColor(selected_color) {
-        cy.get(`button[data-fvalue="${selected_color}"]`).click();
-    }
-
-    getProductsInThePage(){
-       return cy.get('.spf-product-card__title')
-    }
-    
-    selectSize(selected_size) {
-        cy.get(`button[data-fid="98949"][title="${selected_size}"]`).click();
-    }
-
 }
+
+
+
 

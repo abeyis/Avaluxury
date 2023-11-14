@@ -7,7 +7,7 @@ Feature: ShopAll page scenarios
         When User clicks to Shop All
         Then User verifies the page title is 'Shop All'
         
-    @cloud
+    @smoke
     Scenario: Select a color and filter products
         When User clicks to Shop All
         And User clicks on color

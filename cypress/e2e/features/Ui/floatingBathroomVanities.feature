@@ -9,13 +9,13 @@ Feature: Floating Bathroom Page
     When User clicks to the Add to Cart button
     Then User should be able to verify that the product is added to the shopping cart
 
-  @cloud
+
   Scenario: Remove product/products from shopping cart
     When User clicks to the Add to Cart button
     And User clicks the delete icon
     Then The item should be deleted from the shopping cart
 
-  @cloud
+
   Scenario: User searchs some products using Search box
     When Verify it is visible and clickable
     And User clicks search box
@@ -31,7 +31,7 @@ Feature: Floating Bathroom Page
     And Select a color
     Then Verifies the filter should show the product list of the selected product
 
-    Scenario: User can use size filter to choose a product accordingly
+  Scenario: User can use size filter to choose a product accordingly
     When User clicks on size button
     And Select a size
     Then Verifies the filter should show the product list of the selected product

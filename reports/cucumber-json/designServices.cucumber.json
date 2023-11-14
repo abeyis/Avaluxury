@@ -1,0 +1,108 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Design Services",
+    "line": 2,
+    "id": "design-services",
+    "tags": [],
+    "uri": "designServices.feature",
+    "elements": [
+      {
+        "id": "design-services;design-services-tab",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Design Services Tab",
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 7
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 4902000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "User clicks to Design Services",
+            "result": {
+              "status": "passed",
+              "duration": 3925000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "User verifies the page title is 'Design Services'",
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "design-services;view-all-our-recent-product-tab",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "View All Our Recent Product Tab",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "User clicks to Design Services",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "User clicks to View All Our Recent Products",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [
+              {
+                "content": "Scenario: Lets Work Together Section\nWhen User clicks to Design Services\nAnd User fills all necassary fields\nThen User clicks summit button\nThen User verifies success message",
+                "line": 17
+              }
+            ],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "User verifies the page title is 'Shop All'",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
