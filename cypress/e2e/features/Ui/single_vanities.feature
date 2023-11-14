@@ -26,6 +26,11 @@ Feature: Single Vanities
             And User clicks the Single Bathroom Vanities
             Then The page should display only the Single vanities
 
+        Scenario: Search Box Test for Single Vanities Page
+            When User clicks to Single Vanities
+            And User types "oak" in the search box and press enter
+            Then The page should display the products which contain the "oak" word in the product info
+
          Scenario: Add to Cart Button & Your Cart page functionality test
              When User clicks to Single Vanities
              And User clicks to random add-to-cart button 
