@@ -1,7 +1,7 @@
 
 // Feature: Single Vanities Button Functionality
 
-import { Given, When, And, Then, And, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import { homePage } from "../../../pages/homePage";
 import { SingleVanitiesPage } from "../../../pages/single_vanities_page";
 
