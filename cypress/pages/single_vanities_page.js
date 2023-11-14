@@ -29,7 +29,51 @@ export class SingleVanitiesPage{
         cy.get(this.singleVanitiesSelectors.priceButton).click()
     }
 
+    
+    clickSingleBathroomVanitiesCollection() {
+        cy.get (this.singleVanitiesSelectors.singleBathroomVanitiesCollection).click()
+    }
+
+    
+    selectColor(selected_color) {
+        cy.get(`button[data-fvalue="${selected_color}"]`).click();
+    }
+
+    clickSearchBox_and_typeSearchWord (search_word) {
+        cy.get('input.gf-controls-search-input[name="q"][placeholder="Search products"]')
+          .click()
+          .type(search_word + '{enter}');
+    };
+      
+
+    getProductsInThePage(){
+       return cy.get('.spf-product-card__title')
+    }
+    
+    selectSize(selected_size) {
+        cy.get(`button[data-fid="98949"][title="${selected_size}"]`).click();
+    }
+    
+    addToCartRandomProduct() {
+        const productSelectors = '.spf-product-card'; 
+      
+        cy.get(productSelectors).then((products) => {
+         
+          const randomIndex = Math.floor(Math.random() * products.length);
+          const randomProduct = products[randomIndex];
+      
+          
+          cy.wrap(randomProduct).find('button.spf-product__form-btn-addtocart').click();
+        });
+      };
+  
+      clickCheckOutButton(){
+        cy.get('button#checkout.cart__checkout-button.button[name="checkout"]').click();
+      }
+ 
+
 }
+
 
 
 

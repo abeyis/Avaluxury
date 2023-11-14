@@ -14,7 +14,7 @@
         "name": "\"Single Vanities\" button functionality test",
         "tags": [
           {
-            "name": "@smoke",
+            "name": "@cloud",
             "line": 6
           }
         ],
@@ -27,7 +27,7 @@
             "name": "User navigates to Home Page",
             "result": {
               "status": "passed",
-              "duration": 4980000000
+              "duration": 3021000000
             }
           },
           {
@@ -37,7 +37,7 @@
             "name": "User clicks to Single Vanities",
             "result": {
               "status": "passed",
-              "duration": 2968000000
+              "duration": 1632000000
             }
           },
           {
@@ -47,7 +47,7 @@
             "name": "User verifies the page title is \"Single Bathroom Vanities\"",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 26000000
             }
           }
         ]
@@ -66,7 +66,8 @@
             "line": 4,
             "name": "User navigates to Home Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 771000000
             }
           },
           {
@@ -75,7 +76,8 @@
             "line": 12,
             "name": "User clicks to Single Vanities",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 583000000
             }
           },
           {
@@ -84,7 +86,8 @@
             "line": 13,
             "name": "User clicks the Color Filter Button",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 123000000
             }
           },
           {
@@ -93,7 +96,8 @@
             "line": 14,
             "name": "the user selects \"Green\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 111000000
             }
           },
           {
@@ -102,7 +106,8 @@
             "line": 15,
             "name": "the page should display only the vanities in the \"Green\" color",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 23000000
             }
           }
         ]
@@ -121,7 +126,8 @@
             "line": 4,
             "name": "User navigates to Home Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 640000000
             }
           },
           {
@@ -130,7 +136,8 @@
             "line": 18,
             "name": "User clicks to Single Vanities",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 916000000
             }
           },
           {
@@ -139,7 +146,8 @@
             "line": 19,
             "name": "User clicks the Size Filter Button",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 120000000
             }
           },
           {
@@ -148,7 +156,8 @@
             "line": 20,
             "name": "User selects \"18 Inch\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 102000000
             }
           },
           {
@@ -157,7 +166,8 @@
             "line": 21,
             "name": "the page should display only the vanities which are size \"18 Inch\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 24000000
             }
           }
         ]
@@ -176,7 +186,8 @@
             "line": 4,
             "name": "User navigates to Home Page",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 512000000
             }
           },
           {
@@ -185,7 +196,8 @@
             "line": 24,
             "name": "User clicks to Single Vanities",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 854000000
             }
           },
           {
@@ -194,7 +206,8 @@
             "line": 25,
             "name": "User clicks Collection Filter Button",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 204000000
             }
           },
           {
@@ -203,7 +216,8 @@
             "line": 26,
             "name": "User clicks the Single Bathroom Vanities",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 107000000
             }
           },
           {
@@ -212,7 +226,138 @@
             "line": 27,
             "name": "The page should display only the Single vanities",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "single-vanities;search-box-test-for-single-vanities-page",
+        "keyword": "Scenario",
+        "line": 29,
+        "name": "Search Box Test for Single Vanities Page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 509000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "User clicks to Single Vanities",
+            "result": {
+              "status": "passed",
+              "duration": 866000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "User types \"oak\" in the search box and press enter",
+            "result": {
+              "status": "passed",
+              "duration": 1165000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "The page should display the products which contain the \"oak\" word in the product info",
+            "result": {
+              "status": "passed",
+              "duration": 25000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "single-vanities;add-to-cart-button-&-your-cart-page-functionality-test",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "Add to Cart Button & Your Cart page functionality test",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "User clicks to Single Vanities",
+            "result": {
+              "status": "passed",
+              "duration": 735000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "User clicks to random add-to-cart button",
+            "result": {
+              "status": "passed",
+              "duration": 1469000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "it should direct to Your Cart page",
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "the added product should appear in Your Cart page",
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "user clicks to Check-Out Button",
+            "result": {
+              "status": "passed",
+              "duration": 130000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "it should direct to the Payment",
+            "result": {
+              "status": "passed",
+              "duration": 2178000000
             }
           }
         ]
