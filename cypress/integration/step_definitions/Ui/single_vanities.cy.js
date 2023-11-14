@@ -13,6 +13,10 @@ When('User clicks to Single Vanities', () => {
     HomePage.clickSingleVanities();
 });
    
+let singleVanitiesPage=null
+before(()=>{
+    singleVanitiesPage =new SingleVanitiesPage();
+})
 
 
 // Scenario: Search Box Test
