@@ -57,5 +57,9 @@ export class homePage {
     cy.get(this.homePageSelectors.style).click();
     cy.get(this.homePageSelectors.freeStandingVanities).click();
   }
+
+  clickContact() {
+    cy.get(this.homePageSelectors.contact).click();
+  }
 }
 
