@@ -26,7 +26,12 @@ Feature: Single Vanities
             And User clicks the Single Bathroom Vanities
             Then The page should display only the Single vanities
 
-
-
+         Scenario: Add to Cart Button & Your Cart page functionality test
+             When User clicks to Single Vanities
+             And User clicks to random add-to-cart button 
+             And it should direct to Your Cart page
+             And the added product should appear in Your Cart page
+             And user clicks to Check-Out Button
+             Then it should direct to the Payment
 
 

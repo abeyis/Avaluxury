@@ -1,7 +1,7 @@
 
 // Feature: Single Vanities Button Functionality
 
-import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, And, Then, And, Then } from "cypress-cucumber-preprocessor/steps";
 import { homePage } from "../../../pages/homePage";
 import { SingleVanitiesPage } from "../../../pages/single_vanities_page";
 
@@ -14,8 +14,6 @@ before(()=>{
 When('User clicks to Single Vanities', () => {
     HomePage.clickSingleVanities();
 });
-   
-
 
 let singleVanitiesPage=null
 before(()=>{
@@ -68,44 +66,77 @@ before(()=>{
   } )
 
   
-  // Scenario : Collection filter test
+// Scenario : Collection filter test
   
-  And ('User clicks Collection Filter Button' , () => {
-    singleVanitiesPage.clickCollectionButton()
-  })
+And ('User clicks Collection Filter Button' , () => {
+  singleVanitiesPage.clickCollectionButton()
+})
 
 
-  And ('User clicks the Single Bathroom Vanities' , () => {
-    singleVanitiesPage.clickSingleBathroomVanitiesCollection()
-  })
+And ('User clicks the Single Bathroom Vanities' , () => {
+  singleVanitiesPage.clickSingleBathroomVanitiesCollection()
+})
+
+
+Then('The page should display only the Single vanities', () => {
   
-  
-  Then('The page should display only the Single vanities', () => {
+  function checkProduct(singleKeyword) {
     
-    function checkProduct(singleKeyword) {
-      
-      cy.get(singleVanitiesPage.productTitle).each(($productTitle) => {
-        const titleText = $productTitle.text();
-      
-        if (titleText.should('contain','Single')) {
-      
-        } else {
-          cy.wrap($productTitle).click();
-      
-          cy.get(singleVanitiesPage.$productDescription).each(($productDescription) => {
-            const descriptionText = $productDescription.text();
-      
-            if (descriptionText.should('contain','Single')) {
-            } else {
-            }
+    cy.get(singleVanitiesPage.productTitle).each(($productTitle) => {
+      const titleText = $productTitle.text();
+    
+      if (titleText.should('contain','Single')) {
+    
+      } else {
+        cy.wrap($productTitle).click();
+    
+        cy.get(singleVanitiesPage.$productDescription).each(($productDescription) => {
+          const descriptionText = $productDescription.text();
+    
+          if (descriptionText.should('contain','Single')) {
+          } else {
+          }
 
-          });
-      
-          cy.go('back');
-        }
-      });
-  }
+        });
+    
+        cy.go('back');
+      }
+    });
+}
 });
+
+   
+
+
+  //Scenario: Add to Cart Button & Your Cart page functionality test
+
+
+And ('User clicks to random add-to-cart button' , () =>{
+    singleVanitiesPage.addToCartRandomProduct() 
+})
+
+And('it should direct to Your Cart page', () => {
+
+    const expectedTitle = 'Your Shopping Cart'; 
+    cy.title().should('contain', expectedTitle);
+  }); 
+
+And ('the added product should appear in Your Cart page' , () => {  
+   
+    const addedProduct = '.cart-item'; 
+    cy.get(addedProduct).should('exist');
+});
+
+And ('user clicks to Check-Out Button' , () => {
+    singleVanitiesPage.clickCheckOutButton()
+})
+
+Then ('it should direct to the Payment' , () => {
+    const expectedTitle = 'Checkout - Avaluxury'; 
+    cy.title().should('contain', expectedTitle);
+})
+
+
 
 
 

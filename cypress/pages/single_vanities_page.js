@@ -46,6 +46,24 @@ export class SingleVanitiesPage{
     selectSize(selected_size) {
         cy.get(`button[data-fid="98949"][title="${selected_size}"]`).click();
     }
+    
+    addToCartRandomProduct() {
+        const productSelectors = '.spf-product-card'; 
+      
+        cy.get(productSelectors).then((products) => {
+         
+          const randomIndex = Math.floor(Math.random() * products.length);
+          const randomProduct = products[randomIndex];
+      
+          
+          cy.wrap(randomProduct).find('button.spf-product__form-btn-addtocart').click();
+        });
+      };
+  
+      clickCheckOutButton(){
+        cy.get('button#checkout.cart__checkout-button.button[name="checkout"]').click();
+      }
+ 
 
 }
 
