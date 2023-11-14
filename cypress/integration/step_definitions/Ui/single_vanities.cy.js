@@ -44,6 +44,6 @@ And ('user clicks to Check-Out Button' , () => {
 })
 
 Then ('it should direct to the Payment' , () => {
-    const expectedTitle = 'Paiement'; 
+    const expectedTitle = 'Checkout - Avaluxury'; 
     cy.title().should('contain', expectedTitle);
 })
