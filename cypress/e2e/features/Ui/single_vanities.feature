@@ -8,31 +8,6 @@ Feature: Single Vanities Button Functionality
         Then User verifies the page title is "Single Bathroom Vanities"
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Scenario: Add to Cart Button & Your Cart page functionality test
         When User clicks to Single Vanities
         And User clicks to random add-to-cart button 

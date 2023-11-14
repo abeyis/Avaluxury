@@ -41,20 +41,6 @@ export class SingleVanitiesPage{
         cy.get(this.singleVanitiesSelectors.blackColour).click()
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
     
     addToCartRandomProduct() {
         const productSelectors = '.spf-product-card'; 
