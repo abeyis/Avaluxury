@@ -39,13 +39,6 @@ export class SingleVanitiesPage{
     }
 
 
-
-
-
-
-
-
-    
     clickSearchBox_and_typeSearchWord (search_word) {
         cy.get('input.gf-controls-search-input[name="q"][placeholder="Search products"]')
           .click()

@@ -7,26 +7,6 @@ Feature: Single Vanities Button Functionality
         When User clicks to Single Vanities
         Then User verifies the page title is "Single Bathroom Vanities"
 
-
-  
-
-   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Scenario: Search Box Test for Single Vanities Page
         When User clicks to Single Vanities
         And User types "oak" in the search box and press enter
