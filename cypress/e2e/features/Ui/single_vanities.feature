@@ -3,7 +3,7 @@ Feature: Single Vanities
     Background: User is on the home page
         Given User navigates to Home Page
 
-       @smoke
+       @cloud
         Scenario: "Single Vanities" button functionality test
             When User clicks to Single Vanities
             Then User verifies the page title is "Single Bathroom Vanities"
@@ -26,9 +26,17 @@ Feature: Single Vanities
             And User clicks the Single Bathroom Vanities
             Then The page should display only the Single vanities
 
+        Scenario: Search Box Test for Single Vanities Page
+            When User clicks to Single Vanities
+            And User types "oak" in the search box and press enter
+            Then The page should display the products which contain the "oak" word in the product info
 
-
-  
-
+         Scenario: Add to Cart Button & Your Cart page functionality test
+             When User clicks to Single Vanities
+             And User clicks to random add-to-cart button 
+             And it should direct to Your Cart page
+             And the added product should appear in Your Cart page
+             And user clicks to Check-Out Button
+             Then it should direct to the Payment
 
 

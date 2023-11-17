@@ -31,7 +31,7 @@ Feature: Floating Bathroom Page
     And Select a color
     Then Verifies the filter should show the product list of the selected product
 
-    Scenario: User can use size filter to choose a product accordingly
+  Scenario: User can use size filter to choose a product accordingly
     When User clicks on size button
     And Select a size
     Then Verifies the filter should show the product list of the selected product

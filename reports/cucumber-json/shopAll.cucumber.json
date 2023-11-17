@@ -1,0 +1,127 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "ShopAll page scenarios",
+    "line": 1,
+    "id": "shopall-page-scenarios",
+    "tags": [],
+    "uri": "shopAll.feature",
+    "elements": [
+      {
+        "id": "shopall-page-scenarios;select-a-color-and-filter-products",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Select a color and filter products",
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 4559000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "User clicks to Shop All",
+            "result": {
+              "status": "passed",
+              "duration": 2882000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "User clicks on color",
+            "result": {
+              "status": "passed",
+              "duration": 1753000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "User gets all available colors",
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "User selects a random color",
+            "result": {
+              "status": "passed",
+              "duration": 2117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "User filters products by the selected color",
+            "result": {
+              "status": "passed",
+              "duration": 77000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "User clicks on random Add to Cart",
+            "result": {
+              "status": "passed",
+              "duration": 2563000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "User should be able to verify that the product is added to the shopping cart",
+            "result": {
+              "status": "passed",
+              "duration": 50000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "User clicks on Continue Shopping",
+            "result": {
+              "status": "passed",
+              "duration": 2611000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "User verifies they are on the all page",
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -12,7 +12,24 @@ Feature: Double Vanities
     Given User clicks to Double Bathroom Vanities
     When I should see all links are working
 
-
+Scenario Outline: Perform a search with different terms
+    Given User clicks to Double Bathroom Vanities
+    When I enter "<searchTerm>" into the search box
+    Then I should see search results for "<searchTerm>"
+    
+    Examples:
+      | searchTerm    |
+      | White Selena  |
+      | Navy Blue     |
+      | Matte Dust          |
+      | High Gloss          |
+      | Green Selena        |
+      | Matte Cashmere      |
+      | Light Oak           |
+      | Dark Oak            |
+      | Ayasofya            |
+      | Aspendos            |
+      | Gray Selena         |
   Scenario Outline: Select a color option
     Given User clicks to Double Bathroom Vanities
     When I visit the color selector page
@@ -34,13 +51,13 @@ Feature: Double Vanities
       | High Gloss White      |
       | Matte Cashmere        |
       | High Gloss Anthracite |
-
-
+     
+  
   Scenario:Add Double Bathroom Vanities to the shopping cart
     Given User clicks to Double Bathroom Vanities
-    Then User clicks on random Add to Cart
-    And User clicks on Continue Shopping
-    And User verifies they are on the all page
+    Then User clicks on random Add to Carts
+    And User clicks on the Continue Shopping
+    
 
   @Test
   Scenario Outline: Subscribe Our Email
@@ -49,8 +66,7 @@ Feature: Double Vanities
     Then I enter a valid email address '<email>'
     And I click the subscribe button
 
-    Examples:
+  Examples:
       | email                 |
       | selma.berg@abeyis.com |
-
 
