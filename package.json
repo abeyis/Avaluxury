@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run --env TAGS='@smoke' --record --key cc24700e-4019-4a08-a0e6-9b3d6d7a5a42",
-    "local": "npx cypress run --env TAGS='@smoke'",
+    "tests": "npx cypress run --env TAGS='@smoke'",
     "cucumber-report": "node cucumber-html-reporter.js",
     "delete-existingJsonReports": "Remove-Item -Path ./reports/cucumber-json/*.json -Recurse -Force",
     "delete-reportFolder": "rmdir /S /Q reports",
-    "TestWithReportGeneration": "npm run local && npm run cucumber-report"
+    "TestWithReportGeneration": "npm run delete-reportFolder && npm run tests && npm run cucumber-report && npm run delete-existingJsonReports"
   },
   "author": "Abeyis Group 8",
   "license": "ISC",
