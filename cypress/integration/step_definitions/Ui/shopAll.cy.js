@@ -14,7 +14,7 @@ When("User clicks to Shop All", () => {
 });
 
 And("User clicks on color", () => {
-  HomePage.clickShopAll();
+  ShopAllPage.clickColor();
 });
 
 When("User gets all available colors", () => {
